@@ -1,0 +1,48 @@
+.gallery-bg { background: var(--dark1); }
+
+.masonry-grid {
+  columns: 3;
+  column-gap: 10px;
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.masonry-item img {
+  width: 100%;
+  display: block;
+  transition: transform .7s cubic-bezier(.4,0,.2,1), filter .5s;
+  filter: brightness(0.78);
+}
+.masonry-item:hover img {
+  transform: scale(1.05);
+  filter: brightness(1);
+}
+
+.masonry-hover {
+  position: absolute; inset: 0;
+  background: rgba(8,8,8,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity .4s;
+}
+.masonry-item:hover .masonry-hover { opacity: 1; }
+
+.zoom-icon {
+  width: 44px; height: 44px;
+  border: 1px solid rgba(255,255,255,0.7);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.4rem;
+  line-height: 1;
+}

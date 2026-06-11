@@ -1,0 +1,125 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: brightness(0.28);
+  transform: scale(1.1);
+  will-change: transform;
+}
+
+.hero-gradient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 80% at 50% 60%, transparent 30%, rgba(8,8,8,0.6) 70%, rgba(8,8,8,0.95) 100%),
+    linear-gradient(to top, rgba(8,8,8,1) 0%, transparent 40%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 900px;
+  padding: 0 30px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 36px;
+  opacity: 0;
+}
+.hero-badge-line { width: 40px; height: 1px; background: var(--gold); }
+.hero-badge-text {
+  font-size: 0.58rem;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 8vw, 7.5rem);
+  font-weight: 300;
+  line-height: 1.02;
+  letter-spacing: -1px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.hero-title-line { display: block; }
+.hero-title em   { font-style: italic; color: var(--gold2); }
+
+.hero-sub {
+  font-family: var(--font-alt);
+  font-style: italic;
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  font-weight: 300;
+  color: var(--muted2);
+  margin-bottom: 16px;
+  letter-spacing: 2px;
+  opacity: 0;
+}
+
+.hero-desc {
+  font-size: 0.8rem;
+  color: var(--muted);
+  max-width: 500px;
+  margin: 0 auto 52px;
+  line-height: 1.9;
+  letter-spacing: 0.5px;
+  opacity: 0;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  opacity: 0;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  z-index: 2;
+  opacity: 0;
+}
+.hero-scroll-label {
+  font-size: 0.5rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.hero-scroll-line {
+  width: 1px;
+  height: 50px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: scrollLine 2s ease-in-out infinite;
+}
+
+@keyframes scrollLine {
+  0%, 100% { transform: scaleY(1); opacity: 1; }
+  50%       { transform: scaleY(0.5); opacity: 0.4; }
+}

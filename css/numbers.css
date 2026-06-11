@@ -1,0 +1,42 @@
+.numbers-strip {
+  background: var(--dark2);
+  border-top: 1px solid var(--border2);
+  border-bottom: 1px solid var(--border2);
+}
+
+.numbers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.num-item {
+  padding: 60px 40px;
+  text-align: center;
+  border-right: 1px solid var(--border2);
+}
+.num-item:last-child { border-right: none; }
+
+.num-value {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 5vw, 5rem);
+  font-weight: 300;
+  color: var(--gold);
+  line-height: 1;
+  display: block;
+}
+
+.num-suffix {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--gold);
+  vertical-align: super;
+}
+
+.num-label {
+  font-size: 0.58rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 12px;
+  display: block;
+}

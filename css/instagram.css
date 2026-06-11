@@ -1,0 +1,45 @@
+.insta-bg { background: var(--black); }
+
+.insta-header { text-align: center; margin-bottom: 60px; }
+
+.insta-handle {
+  font-size: 0.75rem;
+  color: var(--gold);
+  letter-spacing: 3px;
+  margin-top: 12px;
+}
+
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+}
+
+.insta-item {
+  aspect-ratio: 1;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+.insta-item img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .6s ease, filter .4s;
+  filter: brightness(0.75);
+}
+.insta-item:hover img { transform: scale(1.08); filter: brightness(1); }
+
+.insta-overlay {
+  position: absolute; inset: 0;
+  background: rgba(201,168,76,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity .4s;
+  font-size: 0.6rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--cream);
+}
+.insta-item:hover .insta-overlay { opacity: 1; }

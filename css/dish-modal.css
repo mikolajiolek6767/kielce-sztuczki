@@ -1,0 +1,253 @@
+/* ─── DISH MODAL OVERLAY ─── */
+#dish-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 8000;
+  background: rgba(0,0,0,0);
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  transition: background .4s;
+}
+#dish-modal.open {
+  display: flex;
+  background: rgba(0,0,0,0.96);
+}
+
+.dm-close {
+  position: absolute;
+  top: 24px; right: 36px;
+  background: none;
+  border: none;
+  color: var(--muted2);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: color .3s;
+  z-index: 10;
+  line-height: 1;
+}
+.dm-close:hover { color: var(--gold); }
+
+/* ─── LAYOUT ─── */
+.dm-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  max-width: 1100px;
+  width: 100%;
+  align-items: center;
+}
+
+/* ─── 3D CARD SCENE ─── */
+.dm-scene {
+  perspective: 900px;
+  width: 100%;
+  aspect-ratio: 4/3;
+  cursor: grab;
+  user-select: none;
+}
+.dm-scene:active { cursor: grabbing; }
+
+.dm-card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.08s linear;
+  will-change: transform;
+  border: 1px solid var(--border);
+}
+
+/* ─── CARD FRONT ─── */
+.dm-card-front {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.dm-card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+/* No-photo fallback */
+.dm-no-photo {
+  width: 100%; height: 100%;
+  background: #0a0a0a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.dm-no-photo-icon {
+  font-size: 2.5rem;
+  opacity: 0.2;
+}
+.dm-no-photo-text {
+  font-size: 0.6rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ─── CARD BACK (ingredients) ─── */
+.dm-card-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  background: var(--dark3);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  gap: 12px;
+}
+
+.dm-back-label {
+  font-size: 0.5rem;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.dm-ingredient {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.78rem;
+  color: var(--muted2);
+  line-height: 1.5;
+}
+.dm-ingredient::before {
+  content: '';
+  width: 4px; height: 4px;
+  background: var(--gold);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ─── SHINE EFFECT ─── */
+.dm-shine {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--mx,50%) var(--my,50%),
+    rgba(255,255,255,0.08) 0%,
+    transparent 65%);
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity .3s;
+}
+
+/* ─── HINT ─── */
+.dm-hint {
+  position: absolute;
+  bottom: 14px;
+  left: 0; right: 0;
+  text-align: center;
+  font-size: 0.5rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted);
+  opacity: 0.6;
+}
+
+/* ─── TEXT SIDE ─── */
+.dm-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dm-category {
+  font-size: 0.55rem;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.dm-name-pl {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--cream);
+}
+
+/* łamana angielska czcionka */
+.dm-name-en {
+  font-family: 'Special Elite', 'Courier New', monospace;
+  font-size: 1rem;
+  color: var(--gold2);
+  opacity: 0.7;
+  letter-spacing: 1px;
+  margin-top: -10px;
+}
+
+.dm-divider {
+  width: 50px; height: 1px;
+  background: var(--gold);
+  opacity: 0.4;
+}
+
+.dm-desc-pl {
+  font-size: 0.82rem;
+  color: var(--muted2);
+  line-height: 1.9;
+}
+
+.dm-price {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  color: var(--gold);
+  font-weight: 300;
+}
+
+.dm-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+.dm-tag {
+  padding: 5px 14px;
+  border: 1px solid var(--border);
+  font-size: 0.55rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.dm-reserve-btn {
+  display: inline-block;
+  padding: 14px 36px;
+  background: var(--gold);
+  color: var(--black);
+  font-size: 0.6rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  transition: background .3s;
+  margin-top: 8px;
+  text-decoration: none;
+}
+.dm-reserve-btn:hover { background: var(--gold2); }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+  .dm-inner { grid-template-columns: 1fr; gap: 30px; }
+  #dish-modal { padding: 16px; overflow-y: auto; align-items: flex-start; }
+  .dm-close   { top: 16px; right: 20px; }
+}

@@ -1,0 +1,98 @@
+body {
+  background: var(--black);
+  color: var(--cream);
+  font-family: var(--font-sans);
+  font-weight: var(--fw-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+.ambient {
+  position: fixed;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.04;
+}
+.ambient-1 {
+  width: 600px; height: 600px;
+  background: var(--gold);
+  top: -200px; right: -200px;
+}
+.ambient-2 {
+  width: 400px; height: 400px;
+  background: var(--gold);
+  bottom: 20%; left: -150px;
+}
+
+/* ── Shared section helpers ── */
+section { position: relative; }
+
+.s-pad    { padding: 130px 60px; }
+.s-pad-sm { padding: 90px 60px; }
+.s-inner  { max-width: 1280px; margin: 0 auto; }
+
+.reveal-up   { opacity: 0; transform: translateY(40px); }
+.reveal-fade { opacity: 0; }
+
+.s-eyebrow {
+  display: block;
+  font-size: 0.55rem;
+  letter-spacing: 7px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+.s-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 5vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1.12;
+}
+.s-title em { font-style: italic; color: var(--gold2); }
+
+.s-rule {
+  width: 60px; height: 1px;
+  background: var(--gold);
+  margin: 30px 0;
+  opacity: 0.6;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 17px 50px;
+  background: var(--gold);
+  color: var(--black);
+  font-size: 0.62rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all .4s cubic-bezier(.4,0,.2,1);
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.15);
+  transform: translateX(-101%);
+  transition: transform .4s ease;
+}
+.btn-primary:hover::after { transform: translateX(0); }
+
+.btn-ghost {
+  display: inline-block;
+  padding: 17px 50px;
+  border: 1px solid rgba(240,236,228,0.3);
+  color: var(--cream);
+  font-size: 0.62rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all .4s;
+}
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }

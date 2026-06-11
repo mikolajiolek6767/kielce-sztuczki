@@ -1,0 +1,207 @@
+.wine-bg { background: var(--dark2); }
+
+.wine-intro {
+  max-width: 600px;
+  margin: 0 auto 80px;
+  text-align: center;
+}
+.wine-intro p {
+  font-size: 0.8rem;
+  color: var(--muted2);
+  line-height: 1.9;
+  margin-top: 20px;
+}
+
+.wine-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.wine-card {
+  border: 1px solid var(--border);
+  padding: 44px 36px;
+  transition: border-color .4s, transform .4s;
+  position: relative;
+  overflow: hidden;
+}
+.wine-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  transform: scaleX(0);
+  transition: transform .5s ease;
+}
+.wine-card:hover                { border-color: rgba(201,168,76,0.4); transform: translateY(-6px); }
+.wine-card:hover::before        { transform: scaleX(1); }
+
+.wine-type {
+  font-size: 0.55rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.wine-name {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 300;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.wine-origin {
+  font-size: 0.7rem;
+  color: var(--muted);
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.wine-desc {
+  font-size: 0.74rem;
+  color: var(--muted2);
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+.wine-price {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--gold2);
+}
+
+.wine-click-hint {
+  font-size: 0.48rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 18px;
+  opacity: 0;
+  transition: opacity .3s;
+}
+.wine-card:hover .wine-click-hint { opacity: 0.55; }
+
+/* ─── BOTTLE THUMBNAIL ─── */
+.wine-bottle-thumb {
+  height: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+.wine-bottle-thumb img {
+  max-height: 100%;
+  max-width: 60%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 24px rgba(201,168,76,0.12));
+  transition: filter .4s, transform .5s;
+}
+.wine-card:hover .wine-bottle-thumb img {
+  filter: drop-shadow(0 8px 36px rgba(201,168,76,0.35));
+  transform: translateY(-6px) scale(1.04);
+}
+
+/* ─── WINE BOTTLE MODAL ─── */
+#wine-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 8000;
+  background: rgba(0,0,0,0);
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+#wine-modal.open {
+  display: flex;
+  background: rgba(0,0,0,0.96);
+}
+
+.wm-close {
+  position: absolute;
+  top: 24px; right: 36px;
+  background: none;
+  border: none;
+  color: var(--muted2);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: color .3s;
+  z-index: 10;
+  line-height: 1;
+}
+.wm-close:hover { color: var(--gold); }
+
+.wm-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 80px;
+  max-width: 950px;
+  width: 100%;
+  align-items: center;
+}
+
+#wm-3d-container {
+  width: 100%;
+  aspect-ratio: 1/2.2;
+  position: relative;
+  overflow: hidden;
+  background: #060606;
+  cursor: grab;
+}
+#wm-3d-container:active { cursor: grabbing; }
+#wm-3d-container canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.wm-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.wm-type {
+  font-size: 0.55rem;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.wm-name {
+  font-family: var(--font-serif);
+  font-size: clamp(1.7rem, 2.8vw, 2.5rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--cream);
+}
+.wm-origin {
+  font-size: 0.74rem;
+  font-style: italic;
+  color: var(--muted);
+  margin-top: -8px;
+}
+.wm-divider {
+  width: 50px; height: 1px;
+  background: var(--gold);
+  opacity: 0.4;
+}
+.wm-desc {
+  font-size: 0.82rem;
+  color: var(--muted2);
+  line-height: 1.9;
+}
+.wm-price {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  color: var(--gold);
+  font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  .wm-inner { grid-template-columns: 1fr; gap: 24px; }
+  #wm-3d-container { aspect-ratio: 1/1.6; }
+  #wine-modal { padding: 16px; overflow-y: auto; align-items: flex-start; }
+  .wm-close { top: 16px; right: 20px; }
+}
