@@ -25,21 +25,28 @@
 
 .contact-detail        { margin-bottom: 40px; }
 .contact-detail-label  {
-  font-size: 0.55rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
   letter-spacing: 5px;
   text-transform: uppercase;
   color: var(--gold);
   margin-bottom: 10px;
   display: block;
+  opacity: 0.85;
 }
 .contact-detail-value {
   font-family: var(--font-serif);
-  font-size: 1.1rem;
-  font-weight: 300;
+  font-size: 1.15rem;
+  font-weight: 400;
   color: var(--cream);
   text-decoration: none;
   transition: color .3s;
   display: block;
 }
 .contact-detail-value:hover { color: var(--gold); }
-.contact-detail-sub { font-size: 0.75rem; color: var(--muted); margin-top: 4px; }
+.contact-detail-sub {
+  font-size: 0.85rem;
+  color: var(--muted2);
+  margin-top: 5px;
+  line-height: 1.6;
+}

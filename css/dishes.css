@@ -42,7 +42,7 @@
 .dish-name {
   font-family: var(--font-serif);
   font-size: 1.8rem;
-  font-weight: 300;
+  font-weight: 400;
   margin-bottom: 8px;
   transform: translateY(8px);
   transition: transform .4s ease;

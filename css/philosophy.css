@@ -9,14 +9,20 @@
 
 .philosophy-quote {
   font-family: var(--font-serif);
-  font-size: clamp(1.8rem, 3vw, 2.8rem);
-  font-weight: 300;
+  font-size: clamp(1.6rem, 2.8vw, 2.6rem);
+  font-weight: 400;
   font-style: italic;
-  line-height: 1.4;
+  line-height: 1.45;
   color: var(--cream);
   border-left: 2px solid var(--gold);
   padding-left: 36px;
-  margin-bottom: 36px;
+  margin-bottom: 32px;
+}
+
+.philosophy-text {
+  font-size: 0.95rem;
+  color: var(--muted2);
+  line-height: 1.9;
 }
 
 .philosophy-img {
@@ -28,7 +34,8 @@
 .chef-sig {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   color: var(--gold2);
-  margin-top: 16px;
+  margin-top: 20px;
+  display: block;
 }

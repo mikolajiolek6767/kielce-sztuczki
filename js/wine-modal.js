@@ -45,12 +45,12 @@ function openWineModal(wineId) {
     { opacity: 1, x: 0, duration: 0.5, stagger: 0.07, ease: 'power2.out', delay: 0.15 }
   );
 
-  // init Three.js bottle scene after container is visible
+  // init Three.js bottle scene after container finishes CSS transition
   setTimeout(function () {
     if (typeof WineScene !== 'undefined') {
       WineScene.init('wm-3d-container', wineId);
     }
-  }, 60);
+  }, 120);
 }
 
 function closeWineModal() {

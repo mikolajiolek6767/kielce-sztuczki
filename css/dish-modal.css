@@ -178,7 +178,7 @@
 .dm-name-pl {
   font-family: var(--font-serif);
   font-size: clamp(1.8rem, 3vw, 2.8rem);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.2;
   color: var(--cream);
 }
@@ -205,11 +205,54 @@
   line-height: 1.9;
 }
 
-.dm-price {
-  font-family: var(--font-serif);
-  font-size: 1.4rem;
+/* ─── INGREDIENTS (right panel) ─── */
+.dm-ing-block {
+  border-top: 1px solid var(--border2);
+  border-bottom: 1px solid var(--border2);
+  padding: 18px 0;
+}
+
+.dm-ing-label {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
   color: var(--gold);
-  font-weight: 300;
+  margin-bottom: 14px;
+  opacity: 0.85;
+}
+
+.dm-ing-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 24px;
+}
+
+.dm-ing-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--muted2);
+  line-height: 1.4;
+}
+
+.dm-ing-item::before {
+  content: '';
+  width: 5px;
+  height: 1px;
+  background: var(--gold);
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.dm-price {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  letter-spacing: 2px;
+  color: var(--gold);
 }
 
 .dm-tags {
@@ -229,18 +272,18 @@
 
 .dm-reserve-btn {
   display: inline-block;
-  padding: 14px 36px;
+  padding: 15px 40px;
   background: var(--gold);
   color: var(--black);
-  font-size: 0.6rem;
-  letter-spacing: 4px;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  letter-spacing: 5px;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 400;
   border: none;
   cursor: pointer;
-  font-family: var(--font-sans);
   transition: background .3s;
-  margin-top: 8px;
+  margin-top: 4px;
   text-decoration: none;
 }
 .dm-reserve-btn:hover { background: var(--gold2); }

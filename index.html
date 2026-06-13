@@ -15,7 +15,7 @@
 
   <!-- FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Inter:wght@200;300;400;500&family=Cormorant:ital,wght@0,300;0,400;1,300&family=Special+Elite&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&family=Cormorant:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
 
   <!-- CSS — każdy plik odpowiada jednej sekcji lub warstwie -->
   <link rel="stylesheet" href="css/variables.css" />
@@ -126,8 +126,8 @@
 <section class="hero" id="hero">
   <div class="hero-media">
     <img class="hero-img"
-         src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6762-1024x768.jpeg"
-         alt="Sztuczki Restauracja Kielce – wnętrze" />
+         src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=3840&q=95&fit=crop&auto=format"
+         alt="Sztuczki Restauracja Kielce – eleganckie wnętrze fine dining" />
     <div class="hero-gradient"></div>
   </div>
   <div class="hero-content">
@@ -151,41 +151,25 @@
       <a href="#menu"       class="btn-ghost">Zobacz menu</a>
     </div>
   </div>
-  <div class="hero-scroll" id="hero-scroll">
-    <span class="hero-scroll-label">Odkryj</span>
-    <div class="hero-scroll-line"></div>
-  </div>
 </section>
 
-<!-- ══════════ NUMBERS ══════════ -->
-<div class="numbers-strip">
-  <div class="numbers-grid s-inner">
-    <div class="num-item reveal-up">
-      <span class="num-value">
-        <span class="num-counter" data-count="4.8">0</span>
-      </span>
-      <span class="num-label">Ocena Google</span>
-    </div>
-    <div class="num-item reveal-up">
-      <span class="num-value">
-        <span class="num-counter" data-count="239">0</span>
-      </span>
-      <span class="num-label">Opinii</span>
-    </div>
-    <div class="num-item reveal-up">
-      <span class="num-value">
-        <span class="num-counter" data-count="15">0</span>
-        <span class="num-suffix">+</span>
-      </span>
-      <span class="num-label">Dań autorskich</span>
-    </div>
-    <div class="num-item reveal-up">
-      <span class="num-value">
-        <span class="num-counter" data-count="120">0</span>
-      </span>
-      <span class="num-label">Miejsc</span>
-    </div>
+<!-- ══════════ STARS ══════════ -->
+<div class="stars-strip">
+  <div class="stars-strip-glow stars-strip-glow--top"></div>
+  <div class="stars-eyebrow reveal-up">Ocena Gości · Google</div>
+  <div class="stars-row" id="num-stars-anim">
+    <span class="num-star" style="--i:0">★</span>
+    <span class="num-star" style="--i:1">★</span>
+    <span class="num-star" style="--i:2">★</span>
+    <span class="num-star" style="--i:3">★</span>
+    <span class="num-star" style="--i:4">★</span>
   </div>
+  <div class="stars-meta reveal-up">
+    <span class="stars-score">4,8</span>
+    <span class="stars-sep">·</span>
+    <span class="stars-count">239 zweryfikowanych opinii</span>
+  </div>
+  <div class="stars-strip-glow stars-strip-glow--bottom"></div>
 </div>
 
 <!-- ══════════ ABOUT ══════════ -->
@@ -315,7 +299,6 @@
             <div class="menu-item-name">Hummus z Ajitama</div>
             <div class="menu-item-desc">Kremowy hummus, marynowane żółtko ajitama, olejek pietruszkowy</div>
           </div>
-          <div class="menu-dots"></div>
           <div class="menu-item-price">26 zł</div>
         </div>
         <div class="menu-item reveal-up" data-dish="tatar-pomidorowy">
@@ -323,7 +306,6 @@
             <div class="menu-item-name">Tatar Pomidorowy</div>
             <div class="menu-item-desc">Pomidory heirloom, kapary, oliwa extra virgin, zioła</div>
           </div>
-          <div class="menu-dots"></div>
           <div class="menu-item-price">28 zł</div>
         </div>
         <div class="menu-item reveal-up" data-dish="not-tuna">
@@ -331,7 +313,6 @@
             <div class="menu-item-name">„Not-Tuna" — Arbuz &amp; Burrata</div>
             <div class="menu-item-desc">Pieczony arbuz, burrata, rukola, dip musztardowy</div>
           </div>
-          <div class="menu-dots"></div>
           <div class="menu-item-price">34 zł</div>
         </div>
         <div class="menu-item reveal-up" data-dish="carpaccio-losos">
@@ -339,7 +320,6 @@
             <div class="menu-item-name">Carpaccio z Łososia Sashimi</div>
             <div class="menu-item-desc">Łosoś norweski, cytryna, oliwa extra virgin, mikrozioła</div>
           </div>
-          <div class="menu-dots"></div>
           <div class="menu-item-price">42 zł</div>
         </div>
         <div class="menu-item reveal-up" data-dish="tatar-wolowy">
@@ -347,7 +327,6 @@
             <div class="menu-item-name">Tatar Wołowy z Polędwicy</div>
             <div class="menu-item-desc">Polędwica wołowa, żółtko, kapary, ogórek kiszony, musztarda</div>
           </div>
-          <div class="menu-dots"></div>
           <div class="menu-item-price">48 zł</div>
         </div>
       </div>
@@ -356,12 +335,32 @@
     <!-- Ciepłe Talerze -->
     <div class="menu-panel" id="tab-cieple">
       <div class="menu-items">
+        <div class="menu-item reveal-up" data-dish="spaghetti-aglio">
+          <div class="menu-item-left">
+            <div class="menu-item-name">Spaghetti Aglio Olio e Peperoncino</div>
+            <div class="menu-item-desc">Czosnek, papryczki chili, natka pietruszki, oliwa extra vergine, grana padano</div>
+          </div>
+          <div class="menu-item-price">36 zł</div>
+        </div>
+        <div class="menu-item reveal-up" data-dish="strozzapretti">
+          <div class="menu-item-left">
+            <div class="menu-item-name">Strozzapretti Cacio e Pepe</div>
+            <div class="menu-item-desc">Sos serowy, świeżo mielony pieprz, grana padano</div>
+          </div>
+          <div class="menu-item-price">40 zł</div>
+        </div>
+        <div class="menu-item reveal-up" data-dish="calabrese-nduja">
+          <div class="menu-item-left">
+            <div class="menu-item-name">Calabrese con N'duja</div>
+            <div class="menu-item-desc">Pikantna salsiccia n'duja, pomidory San Marzano, bazylia, pecorino</div>
+          </div>
+          <div class="menu-item-price">42 zł</div>
+        </div>
         <div class="menu-item reveal-up" data-dish="tagliatelle">
           <div class="menu-item-left">
             <div class="menu-item-name">Tagliatelle Szpinakowe</div>
             <div class="menu-item-desc">Świeży makaron szpinakowy, pieczony seler, masło, parmezan</div>
           </div>
-          <div class="menu-dots"></div>
           <div class="menu-item-price">36 zł</div>
         </div>
         <div class="menu-item reveal-up" data-dish="halibut">
@@ -369,7 +368,6 @@
             <div class="menu-item-name">Halibut z Puree z Groszku</div>
             <div class="menu-item-desc">Filet halibuta, aksamitne puree z zielonego groszku, koper</div>
           </div>
-          <div class="menu-dots"></div>
           <div class="menu-item-price">52 zł</div>
         </div>
         <div class="menu-item reveal-up" data-dish="krewetki">
@@ -377,7 +375,6 @@
             <div class="menu-item-name">Krewetki z Chorizo i Fasolą</div>
             <div class="menu-item-desc">Krewetki tygrysie, chorizo ibérico, biała fasola, papryczka chili</div>
           </div>
-          <div class="menu-dots"></div>
           <div class="menu-item-price">46 zł</div>
         </div>
         <div class="menu-item reveal-up" data-dish="satay-kurczak">
@@ -385,7 +382,6 @@
             <div class="menu-item-name">Satay z Kurczaka</div>
             <div class="menu-item-desc">Szaszłyki z piersi kurczaka, sos orzechowy, chrupiąca kapusta</div>
           </div>
-          <div class="menu-dots"></div>
           <div class="menu-item-price">38 zł</div>
         </div>
         <div class="menu-item reveal-up" data-dish="kaczka">
@@ -393,7 +389,6 @@
             <div class="menu-item-name">Kaczka Sous-Vide</div>
             <div class="menu-item-desc">Pierś kaczki, mus cebulowy, ocet balsamiczny, tymianek</div>
           </div>
-          <div class="menu-dots"></div>
           <div class="menu-item-price">54 zł</div>
         </div>
         <div class="menu-item reveal-up" data-dish="kluski">
@@ -401,7 +396,6 @@
             <div class="menu-item-name">Kluski Ziemniaczane</div>
             <div class="menu-item-desc">Kluski ziemniaczane, masło brown, śmietana, szczypiorek</div>
           </div>
-          <div class="menu-dots"></div>
           <div class="menu-item-price">32 zł</div>
         </div>
         <div class="menu-item reveal-up" data-dish="frytki-cukinii">
@@ -409,7 +403,6 @@
             <div class="menu-item-name">Frytki z Cukinii</div>
             <div class="menu-item-desc">Cukinia w tempurze, sos jogurtowy, cytryna, zioła prowansalskie</div>
           </div>
-          <div class="menu-dots"></div>
           <div class="menu-item-price">26 zł</div>
         </div>
         <div class="menu-item reveal-up" data-dish="katsu-cielece">
@@ -417,7 +410,6 @@
             <div class="menu-item-name">Katsu Cielęce</div>
             <div class="menu-item-desc">Cielęcina w panko, pianka parmezanowa, sos tonkatsu</div>
           </div>
-          <div class="menu-dots"></div>
           <div class="menu-item-price">58 zł</div>
         </div>
       </div>
@@ -431,7 +423,6 @@
             <div class="menu-item-name">Policzki Wołowe w Sosie Grzybowym</div>
             <div class="menu-item-desc">Długo duszone policzki, sos grzybowy, puree ziemniaczane</div>
           </div>
-          <div class="menu-dots"></div>
           <div class="menu-item-price">68 zł</div>
         </div>
         <div class="menu-item reveal-up" data-dish="ribeye">
@@ -439,7 +430,6 @@
             <div class="menu-item-name">Ribeye na Kamieniu</div>
             <div class="menu-item-desc">Antrykot 300g serwowany na rozgrzanym kamieniu wulkanicznym</div>
           </div>
-          <div class="menu-dots"></div>
           <div class="menu-item-price">89 zł</div>
         </div>
         <div class="menu-item reveal-up" data-dish="kalafior-burger">
@@ -447,7 +437,6 @@
             <div class="menu-item-name">Burger ze Stekiem Kalafiora</div>
             <div class="menu-item-desc">Stek z kalafiora, bułka brioche, wegański majonez, pikle</div>
           </div>
-          <div class="menu-dots"></div>
           <div class="menu-item-price">44 zł</div>
         </div>
       </div>
@@ -461,7 +450,6 @@
             <div class="menu-item-name">Rum Baba w Słoiku</div>
             <div class="menu-item-desc">Baba drożdżowa, rum ciemny, krem angielski, wanilia</div>
           </div>
-          <div class="menu-dots"></div>
           <div class="menu-item-price">28 zł</div>
         </div>
         <div class="menu-item reveal-up" data-dish="krem-pistacjowy">
@@ -469,7 +457,6 @@
             <div class="menu-item-name">Krem Pistacjowy z Wiśniami i Chałwą</div>
             <div class="menu-item-desc">Pasta pistacjowa, wiśnie, nitki chałwy, śmietana 36%</div>
           </div>
-          <div class="menu-dots"></div>
           <div class="menu-item-price">30 zł</div>
         </div>
         <div class="menu-item reveal-up" data-dish="rabarbar">
@@ -477,7 +464,6 @@
             <div class="menu-item-name">Pieczony Rabarbar z Kruszonką</div>
             <div class="menu-item-desc">Pieczony rabarbar, kruszonka orzechowa, żurawina, cynamon</div>
           </div>
-          <div class="menu-dots"></div>
           <div class="menu-item-price">26 zł</div>
         </div>
       </div>
@@ -491,7 +477,6 @@
             <div class="menu-item-name">Espresso Tonic z Granatem</div>
             <div class="menu-item-desc">Espresso double, tonic Fever-Tree, sok z granatu, lód</div>
           </div>
-          <div class="menu-dots"></div>
           <div class="menu-item-price">22 zł</div>
         </div>
         <div class="menu-item reveal-up" data-dish="mali-boo">
@@ -499,7 +484,6 @@
             <div class="menu-item-name">Mali Boo</div>
             <div class="menu-item-desc">Autorski cocktail — wódka, kokos, limonka, mango, soda</div>
           </div>
-          <div class="menu-dots"></div>
           <div class="menu-item-price">38 zł</div>
         </div>
         <div class="menu-item reveal-up" data-dish="rabarbaroni">
@@ -507,7 +491,6 @@
             <div class="menu-item-name">Rabarbaroni</div>
             <div class="menu-item-desc">Gin, Campari, syrop rabarbarowy, vermouth, skórka pomarańczowa</div>
           </div>
-          <div class="menu-dots"></div>
           <div class="menu-item-price">40 zł</div>
         </div>
         <div class="menu-item reveal-up" data-dish="marharita">
@@ -515,7 +498,6 @@
             <div class="menu-item-name">Marharita</div>
             <div class="menu-item-desc">Tequila blanco, Triple Sec, sok z limonki, sól, twist sezonowy</div>
           </div>
-          <div class="menu-dots"></div>
           <div class="menu-item-price">38 zł</div>
         </div>
       </div>
@@ -679,89 +661,42 @@
 <!-- ══════════ RESERVATION ══════════ -->
 <section class="s-pad reservation-bg" id="rezerwacja">
   <div class="s-inner">
-    <div class="reservation-grid">
 
-      <div class="res-info">
-        <span class="s-eyebrow reveal-up" style="display:block;">Rezerwacja</span>
-        <h2 class="s-title reveal-up">Zarezerwuj<br /><em>Stolik</em></h2>
-        <div class="s-rule reveal-up"></div>
-        <p class="reveal-up">Zapewniamy niezapomniane wieczory dla par, grup przyjaciół i firmowych spotkań. Skontaktuj się z nami lub wypełnij formularz — odpiszemy w ciągu 2 godzin.</p>
-        <div class="res-detail reveal-up">
-          <span class="res-detail-icon">📍</span>
-          <div>
-            <div class="res-detail-label">Adres</div>
-            <div class="res-detail-value">ul. H. Sienkiewicza 29, Kielce</div>
-          </div>
+    <div class="res-centered">
+      <span class="s-eyebrow reveal-up">Rezerwacja</span>
+      <h2 class="s-title reveal-up">Zarezerwuj<br /><em>Stolik</em></h2>
+      <div class="s-rule reveal-up" style="margin:24px auto;"></div>
+
+      <p class="res-tagline reveal-up">Zadzwoń do nas — odbieramy w godzinach otwarcia restauracji</p>
+
+      <a href="tel:+48729789615" class="res-phone reveal-up">
+        <span class="res-phone-icon">📞</span>
+        729 789 615
+      </a>
+
+      <div class="res-meta reveal-up">
+        <div class="res-meta-item">
+          <div class="res-meta-label">Adres</div>
+          <div class="res-meta-value">ul. H. Sienkiewicza 29, Kielce</div>
         </div>
-        <div class="res-detail reveal-up">
-          <span class="res-detail-icon">📞</span>
-          <div>
-            <div class="res-detail-label">Telefon</div>
-            <div class="res-detail-value">729 789 615</div>
-          </div>
+        <div class="res-meta-divider"></div>
+        <div class="res-meta-item">
+          <div class="res-meta-label">Pon – Czw</div>
+          <div class="res-meta-value">12:00 – 21:00</div>
         </div>
-        <div class="res-detail reveal-up">
-          <span class="res-detail-icon">🕐</span>
-          <div>
-            <div class="res-detail-label">Godziny otwarcia</div>
-            <div class="res-detail-value">Nd–Czw: 12:00–21:00</div>
-            <div class="res-detail-sub">Pt–Sb: 12:00–22:00</div>
-          </div>
+        <div class="res-meta-divider"></div>
+        <div class="res-meta-item">
+          <div class="res-meta-label">Pt – Sb</div>
+          <div class="res-meta-value">12:00 – 22:00</div>
+        </div>
+        <div class="res-meta-divider"></div>
+        <div class="res-meta-item">
+          <div class="res-meta-label">Niedziela</div>
+          <div class="res-meta-value">12:00 – 21:00</div>
         </div>
       </div>
-
-      <div>
-        <form class="res-form reveal-up" id="res-form">
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label">Imię i Nazwisko</label>
-              <input type="text"  class="form-input" placeholder="Jan Kowalski" required />
-            </div>
-            <div class="form-group">
-              <label class="form-label">Telefon</label>
-              <input type="tel"   class="form-input" placeholder="+48 000 000 000" required />
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label">E-mail</label>
-            <input type="email" class="form-input" placeholder="email@example.com" required />
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label">Data</label>
-              <input type="date" class="form-input" required />
-            </div>
-            <div class="form-group">
-              <label class="form-label">Godzina</label>
-              <select class="form-select form-input">
-                <option>12:00</option><option>13:00</option><option>14:00</option>
-                <option>15:00</option><option>16:00</option><option>17:00</option>
-                <option>18:00</option><option selected>19:00</option><option>20:00</option>
-                <option>20:30</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Liczba Gości</label>
-            <select class="form-select form-input">
-              <option>1 osoba</option><option>2 osoby</option><option>3 osoby</option>
-              <option selected>4 osoby</option><option>5 osób</option><option>6 osób</option>
-              <option>7–10 osób</option><option>Powyżej 10 osób</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Specjalne życzenia (opcjonalnie)</label>
-            <textarea class="form-textarea" placeholder="Alergie, okazja specjalna, preferencje dotyczące stolika..."></textarea>
-          </div>
-          <button type="submit" class="form-btn">Wyślij Prośbę o Rezerwację</button>
-        </form>
-        <div class="form-success" id="form-success">
-          <h3>Dziękujemy za Rezerwację</h3>
-          <p>Potwierdzenie wyślemy na podany adres e-mail w ciągu 2 godzin. Do zobaczenia!</p>
-        </div>
-      </div>
-
     </div>
+
   </div>
 </section>
 
@@ -805,10 +740,40 @@
 <section class="s-pad insta-bg" id="instagram">
   <div class="s-inner">
     <div class="insta-header reveal-up">
-      <span class="s-eyebrow" style="display:block;">Instagram</span>
+      <span class="s-eyebrow" style="display:block;">Social Media</span>
       <h2 class="s-title">Śledź Nas<br /><em>w Social Media</em></h2>
-      <p class="insta-handle">@sztuczki.restauracja</p>
     </div>
+
+    <div class="social-cards reveal-up">
+      <a href="https://www.instagram.com/sztuczki.restauracja/" target="_blank" class="social-card">
+        <div class="social-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5"/>
+            <circle cx="12" cy="12" r="4.5"/>
+            <circle cx="17.6" cy="6.4" r="0.7" fill="currentColor" stroke="none"/>
+          </svg>
+        </div>
+        <div class="social-card-text">
+          <div class="social-card-name">Instagram</div>
+          <div class="social-card-handle">@sztuczki.restauracja</div>
+        </div>
+        <div class="social-card-arrow">→</div>
+      </a>
+
+      <a href="https://www.facebook.com/p/Sztuczki-Restauracja-61575626309081/" target="_blank" class="social-card">
+        <div class="social-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+        </div>
+        <div class="social-card-text">
+          <div class="social-card-name">Facebook</div>
+          <div class="social-card-handle">Sztuczki Restauracja</div>
+        </div>
+        <div class="social-card-arrow">→</div>
+      </a>
+    </div>
+
     <div class="insta-grid">
       <div class="insta-item reveal-fade"><img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6757-1024x768.jpeg" alt="Instagram 1" /><div class="insta-overlay">Obserwuj</div></div>
       <div class="insta-item reveal-fade"><img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6764-1024x768.jpeg" alt="Instagram 2" /><div class="insta-overlay">Obserwuj</div></div>
@@ -946,6 +911,10 @@
       <p  class="dm-name-en"  id="dm-name-en"></p>
       <div class="dm-divider"></div>
       <p  class="dm-desc-pl"  id="dm-desc-pl"></p>
+      <div class="dm-ing-block">
+        <div class="dm-ing-label">Składniki</div>
+        <div class="dm-ing-list" id="dm-ingredients-right"></div>
+      </div>
       <div class="dm-price"   id="dm-price"></div>
       <div class="dm-tags"    id="dm-tags"></div>
       <a href="#rezerwacja" class="dm-reserve-btn" onclick="closeDishModal()">Zarezerwuj stolik</a>

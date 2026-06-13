@@ -54,6 +54,36 @@ var DISH_DATA = {
   },
 
   /* ══ CIEPŁE TALERZE ══ */
+  'spaghetti-aglio': {
+    name:     'Spaghetti Aglio Olio e Peperoncino',
+    nameEn:   'Aglioo Olioo — Garllic, Chilli & Parsleey',
+    category: 'Ciepłe Talerze',
+    price:    '36 zł',
+    desc:     'Klasyk kuchni włoskiej w czystej formie. Złoty czosnek, ostra peperoncino i świeża pietruszka — nic więcej nie potrzeba.',
+    photo:    null,
+    tags:     ['Vegan', 'Sharing'],
+    ingredients: ['Spaghetti', 'Czosnek', 'Papryczki chili', 'Natka pietruszki', 'Oliwa extra vergine', 'Grana Padano']
+  },
+  'strozzapretti': {
+    name:     'Strozzapretti Cacio e Pepe',
+    nameEn:   'Cacioo e Pepee — Rommano, Black Pepperr',
+    category: 'Ciepłe Talerze',
+    price:    '40 zł',
+    desc:     'Tylko trzy składniki, nieskończona głębia smaku. Intensywny sos serowy z grubym pieprzem — romans z Rzymem na talerzu.',
+    photo:    null,
+    tags:     ['Vegetarian', 'Sharing'],
+    ingredients: ['Strozzapretti', 'Pecorino Romano', 'Grana Padano', 'Świeżo mielony pieprz', 'Woda z makaronu']
+  },
+  'calabrese-nduja': {
+    name:     'Calabrese con N\'duja',
+    nameEn:   'Calabresee w/ N\'duujaa — Spiccy Southh',
+    category: 'Ciepłe Talerze',
+    price:    '42 zł',
+    desc:     'Pikantna salsiccia n\'duja z Kalabrii rozpuszcza się w sosie pomidorowym, tworząc intensywne, rozgrzewające danie południa Włoch.',
+    photo:    null,
+    tags:     ['Sharing', 'Spicy'],
+    ingredients: ['Makaron Calabrese', 'N\'duja', 'Pomidory San Marzano', 'Bazylia', 'Pecorino', 'Oliwa EV']
+  },
   'tagliatelle': {
     name:     'Tagliatelle Szpinakowe',
     nameEn:   'Spinach Tagliattellie — Pieczony Selleri',
@@ -387,6 +417,11 @@ function openDishModal(dishId) {
     return '<div class="dm-ingredient">' + i + '</div>';
   }).join('');
 
+  var ingRight = document.getElementById('dm-ingredients-right');
+  ingRight.innerHTML = dish.ingredients.map(function(i) {
+    return '<div class="dm-ing-item">' + i + '</div>';
+  }).join('');
+
   var front = document.getElementById('dm-card-front-inner');
   if (dish.photo) {
     front.innerHTML = '<img src="' + dish.photo + '" alt="' + dish.name + '" />'
@@ -407,8 +442,9 @@ function openDishModal(dishId) {
   document.body.style.overflow = 'hidden';
 
   dmShine = document.getElementById('dm-shine');
-  gsap.fromTo('#dm-card',    { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.5, ease: 'back.out(1.5)' });
-  gsap.fromTo('.dm-text > *',{ opacity: 0, x: 30 },      { opacity: 1, x: 0, duration: 0.5, stagger: 0.06, ease: 'power2.out', delay: 0.15 });
+  gsap.fromTo('#dm-card',         { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.5, ease: 'back.out(1.5)' });
+  gsap.fromTo('.dm-text > *',     { opacity: 0, x: 30 },      { opacity: 1, x: 0, duration: 0.5, stagger: 0.06, ease: 'power2.out', delay: 0.15 });
+  gsap.fromTo('.dm-ing-item',     { opacity: 0, x: 16 },      { opacity: 1, x: 0, duration: 0.4, stagger: 0.04, ease: 'power2.out', delay: 0.35 });
 }
 
 function closeDishModal() {

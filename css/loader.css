@@ -13,7 +13,7 @@
 .loader-logo {
   font-family: var(--font-serif);
   font-size: clamp(2rem, 5vw, 4rem);
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 8px;
   text-transform: uppercase;
   color: var(--cream);

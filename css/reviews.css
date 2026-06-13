@@ -4,31 +4,31 @@
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: end;
-  margin-bottom: 70px;
+  margin-bottom: 64px;
   gap: 40px;
 }
 
 .rating-big { text-align: right; }
 
 .rating-number {
-  font-family: var(--font-serif);
-  font-size: 5rem;
-  font-weight: 300;
+  font-family: var(--font-display);
+  font-size: 5.5rem;
   color: var(--gold);
   line-height: 1;
 }
 
 .rating-stars {
   color: var(--gold);
-  font-size: 1rem;
-  letter-spacing: 2px;
+  font-size: 1.05rem;
+  letter-spacing: 3px;
   margin: 8px 0;
 }
 
 .rating-count {
-  font-size: 0.65rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
   letter-spacing: 3px;
-  color: var(--muted);
+  color: var(--muted2);
   text-transform: uppercase;
 }
 
@@ -44,19 +44,19 @@
   padding: 40px 36px;
   transition: border-color .4s, transform .3s;
 }
-.review-card:hover { border-color: rgba(201,168,76,0.3); transform: translateY(-3px); }
+.review-card:hover { border-color: rgba(201,168,76,0.32); transform: translateY(-4px); }
 
 .review-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
-.reviewer-name { font-size: 0.75rem; font-weight: 500; letter-spacing: 1px; }
-.review-date   { font-size: 0.6rem; color: var(--muted); }
+.reviewer-name { font-size: 0.88rem; font-weight: 500; letter-spacing: 0.5px; color: var(--cream); }
+.review-date   { font-size: 0.72rem; color: var(--muted); }
 
-.review-stars  { color: var(--gold); font-size: 0.7rem; margin-bottom: 16px; }
+.review-stars  { color: var(--gold); font-size: 0.75rem; margin-bottom: 14px; letter-spacing: 2px; }
 
 .review-quote-mark {
   font-family: var(--font-serif);
@@ -68,15 +68,16 @@
 }
 
 .review-text {
-  font-size: 0.78rem;
+  font-size: 0.88rem;
   color: var(--muted2);
-  line-height: 1.9;
+  line-height: 1.85;
   font-style: italic;
 }
 
 .review-source {
   margin-top: 20px;
-  font-size: 0.58rem;
+  font-family: var(--font-display);
+  font-size: 0.65rem;
   letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--muted);

@@ -1,13 +1,13 @@
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 100px;
+  gap: 90px;
   align-items: center;
 }
 
 .about-images {
   position: relative;
-  height: 620px;
+  height: 600px;
 }
 
 .about-img-main {
@@ -34,23 +34,24 @@
 }
 
 .about-text p {
-  font-size: 0.82rem;
+  font-size: 0.95rem;
   color: var(--muted2);
-  line-height: 2;
-  margin-bottom: 22px;
+  line-height: 1.9;
+  margin-bottom: 20px;
 }
 
 .about-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 36px;
+  margin-top: 32px;
 }
 
 .tag {
-  padding: 8px 20px;
+  padding: 9px 22px;
   border: 1px solid var(--border);
-  font-size: 0.58rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
   letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--muted2);

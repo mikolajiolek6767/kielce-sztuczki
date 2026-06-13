@@ -2,22 +2,23 @@
   --black:   #080808;
   --dark1:   #0e0e0e;
   --dark2:   #141414;
-  --dark3:   #1c1c1c;
-  --dark4:   #242424;
+  --dark3:   #1a1a1a;
+  --dark4:   #222222;
   --gold:    #c9a84c;
   --gold2:   #e8d08a;
   --gold3:   #f5e6b8;
   --copper:  #b87333;
   --cream:   #f0ece4;
-  --muted:   #6b6b6b;
-  --muted2:  #9a9a9a;
+  --muted:   #a0a0a0;   /* was #7a7a7a — podwyższony kontrast */
+  --muted2:  #c8c8c8;   /* was #a8a8a8 — podwyższony kontrast */
   --white:   #ffffff;
-  --border:  rgba(201,168,76,0.15);
-  --border2: rgba(201,168,76,0.08);
-  --fw-thin:  200;
-  --fw-light: 300;
-  --fw-reg:   400;
-  --font-serif: 'Playfair Display', serif;
-  --font-sans:  'Inter', sans-serif;
-  --font-alt:   'Cormorant', serif;
+  --border:  rgba(201,168,76,0.20);
+  --border2: rgba(201,168,76,0.12);
+  --fw-thin:  300;
+  --fw-light: 400;
+  --fw-reg:   500;
+  --font-serif:   'Playfair Display', serif;
+  --font-sans:    'DM Sans', sans-serif;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-alt:     'Cormorant', serif;
 }

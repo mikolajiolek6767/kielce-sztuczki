@@ -1,4 +1,5 @@
 function initCounters() {
+  // Animated number counters
   gsap.utils.toArray('.num-counter').forEach(el => {
     const target    = parseFloat(el.dataset.count || 0);
     const isDecimal = target % 1 !== 0;
@@ -18,4 +19,16 @@ function initCounters() {
       }
     });
   });
+
+  // Star rating animation
+  const starsWrap = document.getElementById('num-stars-anim');
+  if (starsWrap) {
+    ScrollTrigger.create({
+      trigger: starsWrap,
+      start: 'top 85%',
+      onEnter: () => {
+        starsWrap.classList.add('stars-visible');
+      }
+    });
+  }
 }

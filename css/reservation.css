@@ -1,101 +1,100 @@
 .reservation-bg {
   background: var(--dark2);
-  background-image: radial-gradient(ellipse 50% 80% at 80% 50%, rgba(201,168,76,0.04), transparent);
+  background-image:
+    radial-gradient(ellipse 60% 70% at 50% 50%, rgba(201,168,76,0.05), transparent);
 }
 
-.reservation-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 100px;
-  align-items: start;
+/* ── centered layout ── */
+.res-centered {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
 }
 
-.res-info p {
-  font-size: 0.8rem;
+.res-tagline {
+  font-size: 1rem;
   color: var(--muted2);
-  line-height: 1.9;
-  margin-bottom: 16px;
+  line-height: 1.7;
+  margin-bottom: 52px;
 }
 
-.res-detail {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  padding: 20px 0;
-  border-bottom: 1px solid var(--border2);
-}
-.res-detail-icon  { font-size: 1.1rem; opacity: 0.6; margin-top: 2px; }
-.res-detail-label { font-size: 0.58rem; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 3px; }
-.res-detail-value { font-size: 0.82rem; color: var(--cream); }
-.res-detail-sub   { font-size: 0.72rem; color: var(--muted); margin-top: 2px; }
-
-/* ── Form ── */
-.res-form { display: flex; flex-direction: column; gap: 20px; }
-
-.form-group { display: flex; flex-direction: column; gap: 8px; }
-
-.form-label {
-  font-size: 0.58rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--muted);
+/* ── BIG phone number ── */
+.res-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  letter-spacing: 6px;
+  color: var(--gold);
+  text-decoration: none;
+  line-height: 1;
+  margin-bottom: 64px;
+  position: relative;
+  transition: color .3s, letter-spacing .3s;
 }
 
-.form-input,
-.form-select,
-.form-textarea {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid var(--border);
-  color: var(--cream);
-  padding: 14px 18px;
-  font-family: var(--font-sans);
-  font-size: 0.82rem;
-  font-weight: 300;
-  transition: border-color .3s, background .3s;
-  outline: none;
-  width: 100%;
-}
-.form-input:focus,
-.form-select:focus,
-.form-textarea:focus {
-  border-color: var(--gold);
-  background: rgba(201,168,76,0.04);
-}
-
-.form-select        { cursor: pointer; }
-.form-select option { background: var(--dark3); }
-
-.form-textarea { resize: vertical; min-height: 100px; }
-
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-
-.form-btn {
-  padding: 18px 50px;
+.res-phone::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%; right: 50%;
+  height: 1px;
   background: var(--gold);
-  color: var(--black);
-  font-size: 0.62rem;
+  opacity: 0.4;
+  transition: left .4s ease, right .4s ease;
+}
+.res-phone:hover { color: var(--gold2); letter-spacing: 8px; }
+.res-phone:hover::after { left: 0; right: 0; }
+
+.res-phone-icon {
+  font-size: 0.55em;
+  opacity: 0.7;
+}
+
+/* ── info strip ── */
+.res-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  border: 1px solid var(--border);
+  padding: 32px 48px;
+  flex-wrap: wrap;
+}
+
+.res-meta-item {
+  padding: 0 40px;
+  text-align: center;
+}
+
+.res-meta-label {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
   letter-spacing: 4px;
   text-transform: uppercase;
-  font-weight: 500;
-  border: none;
-  cursor: pointer;
-  transition: background .4s;
-  margin-top: 10px;
-  font-family: var(--font-sans);
+  color: var(--gold);
+  opacity: 0.8;
+  margin-bottom: 8px;
 }
-.form-btn:hover { background: var(--gold2); }
 
-.form-success {
-  display: none;
-  text-align: center;
-  padding: 40px;
-  border: 1px solid var(--border);
-}
-.form-success h3 {
+.res-meta-value {
   font-family: var(--font-serif);
-  font-size: 1.6rem;
-  font-weight: 300;
-  color: var(--gold2);
-  margin-bottom: 12px;
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--cream);
 }
-.form-success p { font-size: 0.8rem; color: var(--muted2); }
+
+.res-meta-divider {
+  width: 1px;
+  height: 44px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .res-phone { font-size: clamp(2rem, 10vw, 3rem); letter-spacing: 3px; }
+  .res-meta { padding: 28px 20px; gap: 20px; }
+  .res-meta-item { padding: 12px 20px; }
+  .res-meta-divider { display: none; }
+}

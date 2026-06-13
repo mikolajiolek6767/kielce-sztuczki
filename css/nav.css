@@ -5,22 +5,22 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 28px 60px;
+  padding: 30px 60px;
   transition: padding .5s ease, background .5s ease;
 }
 
 nav.scrolled {
   padding: 18px 60px;
-  background: rgba(8,8,8,0.92);
-  backdrop-filter: blur(16px);
+  background: rgba(8,8,8,0.94);
+  backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border2);
 }
 
+/* ── Logo ── */
 .nav-logo {
-  font-family: var(--font-serif);
-  font-size: 1.25rem;
-  font-weight: 300;
-  letter-spacing: 5px;
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  letter-spacing: 8px;
   text-transform: uppercase;
   color: var(--cream);
   text-decoration: none;
@@ -28,45 +28,50 @@ nav.scrolled {
 }
 .nav-logo:hover { color: var(--gold); }
 
+/* ── Links ── */
 .nav-links {
   display: flex;
-  gap: 44px;
+  gap: 48px;
   list-style: none;
 }
 
 .nav-links a {
-  font-size: 0.62rem;
-  letter-spacing: 3px;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  letter-spacing: 4px;
   text-transform: uppercase;
-  color: var(--muted2);
+  color: rgba(240,236,228,0.72);
   text-decoration: none;
-  transition: color .3s;
+  transition: color .25s;
   position: relative;
 }
 .nav-links a::after {
   content: '';
   position: absolute;
-  bottom: -4px; left: 0;
+  bottom: -5px; left: 0;
   width: 0; height: 1px;
   background: var(--gold);
-  transition: width .4s ease;
+  transition: width .35s ease;
 }
-.nav-links a:hover       { color: var(--cream); }
+.nav-links a:hover        { color: var(--cream); }
 .nav-links a:hover::after { width: 100%; }
 
+/* ── CTA button ── */
 .nav-cta {
-  padding: 12px 28px;
+  padding: 13px 30px;
   border: 1px solid var(--gold);
   color: var(--gold) !important;
-  font-size: 0.6rem !important;
-  letter-spacing: 3px !important;
+  font-family: var(--font-display) !important;
+  font-size: 0.82rem !important;
+  letter-spacing: 4px !important;
   text-transform: uppercase;
   text-decoration: none;
-  transition: all .4s !important;
+  transition: all .35s !important;
 }
 .nav-cta:hover        { background: var(--gold) !important; color: var(--black) !important; }
 .nav-cta::after       { display: none !important; }
 
+/* ── Socials ── */
 .nav-socials {
   display: flex;
   gap: 14px;
@@ -74,14 +79,14 @@ nav.scrolled {
   margin-left: 24px;
 }
 .nav-social-icon {
-  color: var(--muted2);
+  color: rgba(240,236,228,0.55);
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
   transition: color .3s, transform .3s;
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
 }
 .nav-social-icon:hover { color: var(--gold); transform: scale(1.15); }
-.nav-social-icon svg   { width: 18px; height: 18px; }
+.nav-social-icon svg   { width: 20px; height: 20px; }
