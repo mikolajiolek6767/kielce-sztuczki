@@ -14,5 +14,6 @@ function animateHeroEntrance() {
     .from('#h3',        { y: 80, opacity: 0,  duration: 1,   ease: 'power3.out' }, '-=0.8')
     .to('#hero-sub',    { opacity: 1, y: 0,   duration: 0.8, ease: 'power2.out' }, '-=0.5')
     .to('#hero-desc',   { opacity: 1, y: 0,   duration: 0.8, ease: 'power2.out' }, '-=0.6')
-    .to('#hero-btns',   { opacity: 1, y: 0,   duration: 0.8, ease: 'power2.out' }, '-=0.5');
+    .to('#hero-btns',   { opacity: 1, y: 0,   duration: 0.8, ease: 'power2.out' }, '-=0.5')
+    .to('.hero-scroll', { opacity: 1,          duration: 1.0, ease: 'power2.out' }, '-=0.2');
 }

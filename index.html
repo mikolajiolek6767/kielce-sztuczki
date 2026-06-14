@@ -12,6 +12,9 @@
   <meta property="og:description" content="Wyjątkowe doświadczenie kulinarne w sercu Kielc. Restauracja food sharing klasy premium." />
   <meta property="og:image"       content="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6762-1024x768.jpeg" />
   <meta name="theme-color"        content="#080808" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://sztuczki.pl/" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23080808'/%3E%3Ctext x='50' y='74' text-anchor='middle' font-family='Georgia%2C serif' font-size='68' font-weight='600' fill='%23c9a84c'%3ES%3C/text%3E%3C/svg%3E" />
 
   <!-- FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -120,7 +123,24 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
     </a>
   </div>
+  <button class="nav-burger" id="nav-burger" aria-label="Otwórz menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- Mobile nav overlay -->
+<div class="nav-mobile" id="nav-mobile">
+  <button class="nav-mobile-close" id="nav-mobile-close" aria-label="Zamknij menu">×</button>
+  <ul class="nav-mobile-links">
+    <li><a href="#o-nas">O Nas</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#galeria">Galeria</a></li>
+    <li><a href="#opinie">Opinie</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+    <li><a href="#rezerwacja">Rezerwacja</a></li>
+  </ul>
+  <a href="tel:+48729789615" class="nav-mobile-phone">729 789 615</a>
+</div>
 
 <!-- ══════════ HERO ══════════ -->
 <section class="hero" id="hero">
@@ -150,6 +170,10 @@
       <a href="#rezerwacja" class="btn-primary">Zarezerwuj stolik</a>
       <a href="#menu"       class="btn-ghost">Zobacz menu</a>
     </div>
+  </div>
+  <div class="hero-scroll">
+    <span class="hero-scroll-label">Scroll</span>
+    <div class="hero-scroll-line"></div>
   </div>
 </section>
 
@@ -493,9 +517,9 @@
           </div>
           <div class="menu-item-price">40 zł</div>
         </div>
-        <div class="menu-item reveal-up" data-dish="marharita">
+        <div class="menu-item reveal-up" data-dish="margarita">
           <div class="menu-item-left">
-            <div class="menu-item-name">Marharita</div>
+            <div class="menu-item-name">Margarita</div>
             <div class="menu-item-desc">Tequila blanco, Triple Sec, sok z limonki, sól, twist sezonowy</div>
           </div>
           <div class="menu-item-price">38 zł</div>
@@ -507,6 +531,7 @@
 </section>
 
 <!-- ══════════ WINE ══════════ -->
+
 <section class="s-pad wine-bg" id="wina">
   <div class="s-inner">
     <div class="wine-intro reveal-up">
@@ -561,39 +586,39 @@
     </div>
     <div class="masonry-grid">
       <div class="masonry-item">
-        <img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6762-1024x768.jpeg" alt="Sztuczki wnętrze 1" />
+        <img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6762-1024x768.jpeg" alt="Wnętrze restauracji Sztuczki Kielce – sala główna" />
         <div class="masonry-hover"><div class="zoom-icon">+</div></div>
       </div>
       <div class="masonry-item">
-        <img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6763-1024x768.jpeg" alt="Sztuczki wnętrze 2" />
+        <img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6763-1024x768.jpeg" alt="Wnętrze restauracji Sztuczki – galeria sztuki Eviva l'arte" />
         <div class="masonry-hover"><div class="zoom-icon">+</div></div>
       </div>
       <div class="masonry-item">
-        <img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6777-1024x768.jpeg" alt="Sztuczki danie 1" />
+        <img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6777-1024x768.jpeg" alt="Katsu cielęce w panko z pianką parmezanową – Sztuczki" />
         <div class="masonry-hover"><div class="zoom-icon">+</div></div>
       </div>
       <div class="masonry-item">
-        <img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6778-1024x768.jpeg" alt="Sztuczki danie 2" />
+        <img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6778-1024x768.jpeg" alt="Policzki wołowe w sosie grzybowym – Sztuczki" />
         <div class="masonry-hover"><div class="zoom-icon">+</div></div>
       </div>
       <div class="masonry-item">
-        <img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6787-1024x768.jpeg" alt="Sztuczki danie 3" />
+        <img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6787-1024x768.jpeg" alt="Hummus z ajitama i olejkiem pietruszkowym – Sztuczki" />
         <div class="masonry-hover"><div class="zoom-icon">+</div></div>
       </div>
       <div class="masonry-item">
-        <img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6788-1024x768.jpeg" alt="Sztuczki danie 4" />
+        <img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6788-1024x768.jpeg" alt="Tatar pomidorowy z kaparami i ziołami – Sztuczki" />
         <div class="masonry-hover"><div class="zoom-icon">+</div></div>
       </div>
       <div class="masonry-item">
-        <img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6789-1024x768.jpeg" alt="Sztuczki danie 5" />
+        <img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6789-1024x768.jpeg" alt="Tagliatelle szpinakowe z pieczonym selerem – Sztuczki" />
         <div class="masonry-hover"><div class="zoom-icon">+</div></div>
       </div>
       <div class="masonry-item">
-        <img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6797-1024x768.jpeg" alt="Sztuczki danie 6" />
+        <img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6797-1024x768.jpeg" alt="Carpaccio z łososia sashimi z mikro ziołami – Sztuczki" />
         <div class="masonry-hover"><div class="zoom-icon">+</div></div>
       </div>
       <div class="masonry-item">
-        <img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6810-1024x768.jpeg" alt="Sztuczki danie 7" />
+        <img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6810-1024x768.jpeg" alt="Satay z kurczaka z sosem orzechowym – Sztuczki" />
         <div class="masonry-hover"><div class="zoom-icon">+</div></div>
       </div>
     </div>
@@ -728,7 +753,7 @@
     </div>
     <div class="contact-map reveal-fade">
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2469.5!2d20.6286!3d50.8660!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47183900!2sSienkiewicza+29+Kielce!5e0!3m2!1spl!2spl!4v1"
+        src="https://maps.google.com/maps?q=ul.+Henryka+Sienkiewicza+29%2C+25-007+Kielce&t=&z=17&ie=UTF8&iwloc=&output=embed"
         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
         title="Lokalizacja Sztuczki Kielce">
       </iframe>
@@ -775,11 +800,11 @@
     </div>
 
     <div class="insta-grid">
-      <div class="insta-item reveal-fade"><img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6757-1024x768.jpeg" alt="Instagram 1" /><div class="insta-overlay">Obserwuj</div></div>
-      <div class="insta-item reveal-fade"><img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6764-1024x768.jpeg" alt="Instagram 2" /><div class="insta-overlay">Obserwuj</div></div>
-      <div class="insta-item reveal-fade"><img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6775-1024x768.jpeg" alt="Instagram 3" /><div class="insta-overlay">Obserwuj</div></div>
-      <div class="insta-item reveal-fade"><img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6801-1024x768.jpeg" alt="Instagram 4" /><div class="insta-overlay">Obserwuj</div></div>
-      <div class="insta-item reveal-fade"><img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6804-1024x768.jpeg" alt="Instagram 5" /><div class="insta-overlay">Obserwuj</div></div>
+      <div class="insta-item reveal-fade"><img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6757-1024x768.jpeg" alt="Sztuczki Kielce – wnętrze restauracji z galerią sztuki" /><div class="insta-overlay">Obserwuj</div></div>
+      <div class="insta-item reveal-fade"><img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6764-1024x768.jpeg" alt="Food sharing – wspólne doświadczenie kulinarne w Sztuczkach" /><div class="insta-overlay">Obserwuj</div></div>
+      <div class="insta-item reveal-fade"><img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6775-1024x768.jpeg" alt="Autorskie dania kuchni sezonowej – Sztuczki Food & Art" /><div class="insta-overlay">Obserwuj</div></div>
+      <div class="insta-item reveal-fade"><img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6801-1024x768.jpeg" alt="Halibut z puree z groszku – tasting plates Sztuczki" /><div class="insta-overlay">Obserwuj</div></div>
+      <div class="insta-item reveal-fade"><img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6804-1024x768.jpeg" alt="Krewetki z chorizo ibérico i białą fasolą – Sztuczki" /><div class="insta-overlay">Obserwuj</div></div>
     </div>
   </div>
 </section>
@@ -924,6 +949,15 @@
 </div>
 
 <!-- JS — osobny plik na każdą funkcjonalność, ładowane po kolei -->
+<!-- Mobile sticky CTA bar -->
+<div class="mobile-cta-bar">
+  <a href="tel:+48729789615" class="mobile-cta-call">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.61A16 16 0 0 0 14 15.68l1.7-1.7a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Zadzwoń
+  </a>
+  <a href="#rezerwacja" class="mobile-cta-reserve">Rezerwacja</a>
+</div>
+
 <script src="js/loader.js"></script>
 <script src="js/cursor.js"></script>
 <script src="js/nav.js"></script>

@@ -14,7 +14,7 @@ var DISH_DATA = {
   },
   'tatar-pomidorowy': {
     name:     'Tatar Pomidorowy',
-    nameEn:   'Tomatto Tartare — Friesh & Ligth',
+    nameEn:   'Tomatto Tartare — Fresh & Light',
     category: 'Zimne Talerze',
     price:    '28 zł',
     desc:     'Lekki i odświeżający tatar z dojrzałych pomidorów. Podany z chrupiącymi grzankami i ziołami. Idealna propozycja na letni wieczór.',
@@ -146,7 +146,7 @@ var DISH_DATA = {
   },
   'frytki-cukinii': {
     name:     'Frytki z Cukinii',
-    nameEn:   'Zucchinni Fryes — Ligth & Crisppy',
+    nameEn:   'Zucchinni Fryes — Light & Crisppy',
     category: 'Ciepłe Talerze',
     price:    '26 zł',
     desc:     'Chrupiące frytki z cukinii w lekkim cieście. Lekka, przyjemna przekąska idealna na sharing.',
@@ -260,9 +260,9 @@ var DISH_DATA = {
     tags:     ['Cocktail', 'Bitter'],
     ingredients: ['Gin', 'Campari', 'Syrop rabarbarowy', 'Vermouth', 'Skórka pomarańczowa']
   },
-  'marharita': {
-    name:     'Marharita',
-    nameEn:   'Marhaarita — Housee Margaritaa',
+  'margarita': {
+    name:     'Margarita',
+    nameEn:   'Margaritaa — Housee Margaritaa',
     category: 'Cocktaile',
     price:    '38 zł',
     desc:     'Autorska Margarita baru Sztuczki. Klasyczna receptura z niespodziewanym, sezonowym twistem.',

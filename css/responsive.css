@@ -6,6 +6,8 @@
   nav         { padding: 22px 36px; }
   nav.scrolled{ padding: 16px 36px; }
   .nav-links  { display: none; }
+  .nav-socials{ display: none; }
+  .nav-burger { display: flex; }
 
   .about-grid,
   .philosophy-grid,
@@ -29,6 +31,51 @@
   .insta-grid { grid-template-columns: repeat(3, 1fr); }
 
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+}
+
+/* ── Mobile sticky CTA bar ── */
+.mobile-cta-bar { display: none; }
+
+@media (max-width: 640px) {
+  .mobile-cta-bar {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 400;
+    height: 60px;
+    border-top: 1px solid var(--border);
+    background: rgba(8,8,8,0.96);
+    backdrop-filter: blur(16px);
+  }
+  .mobile-cta-call,
+  .mobile-cta-reserve {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: var(--font-display);
+    font-size: 0.82rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background .3s, color .3s;
+  }
+  .mobile-cta-call {
+    color: var(--cream);
+    border-right: 1px solid var(--border);
+  }
+  .mobile-cta-call:hover { background: rgba(201,168,76,0.1); color: var(--gold); }
+  .mobile-cta-reserve {
+    background: var(--gold);
+    color: var(--black);
+  }
+  .mobile-cta-reserve:hover { background: var(--gold2); }
+
+  /* push footer above sticky bar */
+  footer { padding-bottom: 80px; }
 }
 
 /* ─── MOBILE ─── */
