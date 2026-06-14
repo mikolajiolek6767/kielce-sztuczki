@@ -1,0 +1,87 @@
+/* ─── MEDIUM DESKTOP (1025px – 1280px) — nav nie mieści się w jednym rzędzie ─── */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  nav         { padding: 22px 36px; }
+  nav.scrolled{ padding: 14px 36px; }
+  .nav-links  { gap: 20px; }
+  .nav-links a { font-size: 0.82rem; letter-spacing: 2px; }
+  .nav-cta    { padding: 10px 20px; font-size: 0.75rem !important; letter-spacing: 2px !important; }
+  .nav-logo   { font-size: 1.45rem; letter-spacing: 6px; }
+}
+
+/* ─── TABLET (≤ 1024px) ─── */
+@media (max-width: 1024px) {
+  html { font-size: 16px; }
+  .s-pad, .s-pad-sm { padding: 80px 36px; }
+
+  nav         { padding: 22px 36px; }
+  nav.scrolled{ padding: 16px 36px; }
+  .nav-links  { display: none; }
+
+  .about-grid,
+  .philosophy-grid,
+  .reservation-grid { grid-template-columns: 1fr; gap: 50px; }
+
+  .contact-grid { grid-template-columns: 1fr; padding: 0 36px; }
+  .contact-info { padding: 60px 0; }
+
+  .about-images { height: 400px; }
+
+  .dishes-grid { grid-template-columns: 1fr; gap: 2px; }
+  .dish-card   { height: 360px; }
+
+  .wine-grid,
+  .reviews-grid { grid-template-columns: 1fr; gap: 20px; }
+
+  .numbers-grid { grid-template-columns: 1fr 1fr; }
+
+  .masonry-grid { columns: 2; }
+
+  .insta-grid { grid-template-columns: repeat(3, 1fr); }
+
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+}
+
+/* ─── MOBILE (≤ 640px) ─── */
+@media (max-width: 640px) {
+  html { font-size: 15px; }
+  .s-pad, .s-pad-sm { padding: 60px 20px; }
+
+  nav         { padding: 18px 20px; }
+  nav.scrolled{ padding: 14px 20px; }
+
+  .hero-title { font-size: clamp(2.5rem, 10vw, 4rem); }
+
+  .masonry-grid { columns: 1; }
+
+  .insta-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+  footer       { padding: 60px 20px 30px; }
+
+  .form-row { grid-template-columns: 1fr; }
+
+  .numbers-grid { grid-template-columns: 1fr 1fr; }
+
+  .contact-grid  { padding: 0 20px; }
+  .dishes-grid   { grid-template-columns: 1fr; }
+  .wine-grid     { grid-template-columns: 1fr; }
+  .reviews-grid  { grid-template-columns: 1fr; }
+}
+
+/* ─── KRÓTKI EKRAN — laptopy (wysokość ≤ 800px) ─── */
+@media (max-height: 800px) {
+  .hero { padding-top: 75px; }
+  .hero-badge { margin-bottom: 14px; }
+  .hero-title { font-size: clamp(2.8rem, 7.5vw, 6.5rem); }
+  .hero-sub   { margin-bottom: 10px; font-size: clamp(1rem, 2vw, 1.4rem); }
+  .hero-desc  { margin-bottom: 24px; }
+}
+
+/* ─── BARDZO KRÓTKI EKRAN (wysokość ≤ 680px) ─── */
+@media (max-height: 680px) {
+  .hero { padding-top: 65px; }
+  .hero-badge { display: none; }
+  .hero-title { font-size: clamp(2.4rem, 6.5vw, 5rem); }
+  .hero-sub   { margin-bottom: 14px; }
+  .hero-desc  { display: none; }
+}

@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sztuczki Food&Art | Fine Dining Kielce</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Sztuczki Food&Art – wyjątkowe doświadczenie kulinarne w sercu Kielc. Food sharing, galeria sztuki. Rezerwacje: 729 789 615." />
+  <meta name="keywords" content="restauracja Kielce, fine dining Kielce, najlepsza restauracja Kielce, kolacja Kielce, food sharing Kielce" />
+  <meta property="og:title"       content="Sztuczki Food&Art | Fine Dining Kielce" />
+  <meta property="og:description" content="Wyjątkowe doświadczenie kulinarne w sercu Kielc. Restauracja food sharing klasy premium." />
+  <meta property="og:image"       content="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6762-1024x768.jpeg" />
+  <meta name="theme-color"        content="#080808" />
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&family=Cormorant:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- CSS — każdy plik odpowiada jednej sekcji lub warstwie -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/loader.css" />
+  <link rel="stylesheet" href="css/cursor.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/numbers.css" />
+  <link rel="stylesheet" href="css/about.css" />
+  <link rel="stylesheet" href="css/philosophy.css" />
+  <link rel="stylesheet" href="css/dishes.css" />
+  <link rel="stylesheet" href="css/menu.css" />
+  <link rel="stylesheet" href="css/wine.css" />
+  <link rel="stylesheet" href="css/gallery.css" />
+  <link rel="stylesheet" href="css/lightbox.css" />
+  <link rel="stylesheet" href="css/reviews.css" />
+  <link rel="stylesheet" href="css/reservation.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/instagram.css" />
+  <link rel="stylesheet" href="css/faq.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/dish-modal.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+
+  <!-- GSAP (CDN) — musi być przed js/main.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Sztuczki Food & Art",
+    "description": "Pierwsza w Kielcach restauracja food sharing z galerią sztuki. Fine dining, autorskie dania, doskonałe drinki.",
+    "telephone": "+48729789615",
+    "priceRange": "40–120 zł",
+    "servesCuisine": ["Polish", "European", "International"],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ul. Henryka Sienkiewicza 29",
+      "addressLocality": "Kielce",
+      "postalCode": "25-007",
+      "addressCountry": "PL"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday","Monday","Tuesday","Wednesday","Thursday"], "opens": "12:00", "closes": "21:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "12:00", "closes": "22:00" }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "239",
+      "bestRating": "5"
+    },
+    "sameAs": [
+      "https://www.instagram.com/sztuczki.restauracja/",
+      "https://www.facebook.com/p/Sztuczki-Restauracja-61575626309081/"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<!-- Ambient glow background -->
+<div class="ambient ambient-1"></div>
+<div class="ambient ambient-2"></div>
+
+<!-- Custom cursor -->
+<div class="cursor"          id="cursor"></div>
+<div class="cursor-follower" id="cursor-follower"></div>
+
+<!-- ══════════ LOADER ══════════ -->
+<div id="loader">
+  <div class="loader-logo">Sztuczki</div>
+  <div class="loader-line-wrap">
+    <div class="loader-line" id="loader-line"></div>
+  </div>
+  <div class="loader-pct" id="loader-pct">0%</div>
+</div>
+
+<!-- ══════════ NAV ══════════ -->
+<nav id="nav">
+  <a href="#" class="nav-logo">Sztuczki</a>
+  <ul class="nav-links">
+    <li><a href="#o-nas">O Nas</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#galeria">Galeria</a></li>
+    <li><a href="#opinie">Opinie</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+    <li><a href="#rezerwacja" class="nav-cta">Rezerwacja</a></li>
+  </ul>
+  <div class="nav-socials">
+    <a href="https://www.instagram.com/sztuczki.restauracja/" target="_blank" class="nav-social-icon" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a href="https://www.facebook.com/p/Sztuczki-Restauracja-61575626309081/" target="_blank" class="nav-social-icon" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+    </a>
+  </div>
+</nav>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero" id="hero">
+  <div class="hero-media">
+    <img class="hero-img"
+         src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=3840&q=95&fit=crop&auto=format"
+         alt="Sztuczki Restauracja Kielce – eleganckie wnętrze fine dining" />
+    <div class="hero-gradient"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge" id="hero-badge">
+      <div class="hero-badge-line"></div>
+      <span class="hero-badge-text">Kuchnia · Sztuka · Kielce</span>
+      <div class="hero-badge-line"></div>
+    </div>
+    <h1 class="hero-title">
+      <span class="hero-title-line" id="h1">Wyjątkowe</span>
+      <span class="hero-title-line" id="h2"><em>Doświadczenie</em></span>
+      <span class="hero-title-line" id="h3">Kulinarne</span>
+    </h1>
+    <p class="hero-sub"  id="hero-sub">w Sercu Kielc</p>
+    <p class="hero-desc" id="hero-desc">
+      Odkryj koncepcję food sharing, gdzie każdy posiłek staje się wspólnym rytuałem.
+      Sztuka na talerzach, sztuka na ścianach.
+    </p>
+    <div class="hero-btns" id="hero-btns">
+      <a href="#rezerwacja" class="btn-primary">Zarezerwuj stolik</a>
+      <a href="#menu"       class="btn-ghost">Zobacz menu</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ STARS ══════════ -->
+<div class="stars-strip">
+  <div class="stars-strip-glow stars-strip-glow--top"></div>
+  <div class="stars-eyebrow reveal-up">Ocena Gości · Google</div>
+  <div class="stars-row" id="num-stars-anim">
+    <span class="num-star" style="--i:0">★</span>
+    <span class="num-star" style="--i:1">★</span>
+    <span class="num-star" style="--i:2">★</span>
+    <span class="num-star" style="--i:3">★</span>
+    <span class="num-star" style="--i:4">★</span>
+  </div>
+  <div class="stars-meta reveal-up">
+    <span class="stars-score">4,8</span>
+    <span class="stars-sep">·</span>
+    <span class="stars-count">239 zweryfikowanych opinii</span>
+  </div>
+  <div class="stars-strip-glow stars-strip-glow--bottom"></div>
+</div>
+
+<!-- ══════════ ABOUT ══════════ -->
+<section class="s-pad" id="o-nas">
+  <div class="s-inner">
+    <div class="about-grid">
+
+      <div class="about-images reveal-fade">
+        <img class="about-img-main"
+             src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6757-1024x768.jpeg"
+             alt="Wnętrze Sztuczki Restauracja" />
+        <img class="about-img-accent"
+             src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6764-1024x768.jpeg"
+             alt="Dania Sztuczki Kielce" />
+        <div class="about-img-frame"></div>
+      </div>
+
+      <div class="about-text">
+        <span class="s-eyebrow reveal-up">O Restauracji</span>
+        <h2 class="s-title reveal-up">Gdzie <em>Kuchnia</em><br />Spotyka Sztukę</h2>
+        <div class="s-rule reveal-up"></div>
+        <p class="reveal-up">Sztuczki to pierwsze w Kielcach miejsce oparte na koncepcji food sharing — każdy posiłek to doświadczenie, które przeżywasz razem z innymi. Zamawiasz różne potrawy, dzielisz się nimi, odkrywasz smaki.</p>
+        <p class="reveal-up">Nasze wnętrze to jednocześnie galeria sztuki Eviva l'arte, gdzie lokalni artyści prezentują swoje prace. Jedzenie i sztuka tworzą tutaj jedną, nierozerwalną całość.</p>
+        <p class="reveal-up">Kuchnia oparta na lokalnych, sezonowych składnikach najwyższej jakości. Każde danie — autorskie, przemyślane, niepowtarzalne.</p>
+        <div class="about-tags reveal-up">
+          <span class="tag">Food Sharing</span>
+          <span class="tag">Galeria Sztuki</span>
+          <span class="tag">Kuchnia Sezonowa</span>
+          <span class="tag">Vegan Options</span>
+          <span class="tag">Fine Dining</span>
+          <span class="tag">Cocktail Bar</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PHILOSOPHY ══════════ -->
+<section class="s-pad philosophy-bg" id="filozofia">
+  <div class="s-inner">
+    <div class="philosophy-grid">
+
+      <div>
+        <span class="s-eyebrow reveal-up">Filozofia</span>
+        <h2 class="s-title reveal-up">Nasza <em>Misja</em></h2>
+        <div class="s-rule reveal-up"></div>
+        <blockquote class="philosophy-quote reveal-up">
+          „W Sztuczkach wierzymy, że jedzenie smakuje najlepiej, gdy się nim dzielisz."
+        </blockquote>
+        <p class="reveal-up" style="font-size:.8rem;color:var(--muted2);line-height:2;">
+          Nasza kuchnia to nie zestaw przystawek i dań głównych — to kompozycja talerzyków,
+          które tworzą wspólne doświadczenie. Chcemy, żebyście traktowali stół jak miejsce spotkania,
+          a każde zamówienie — jak zaproszenie do odkrywania.
+        </p>
+        <p class="chef-sig reveal-up">— Szef Kuchni, Sztuczki</p>
+      </div>
+
+      <div class="reveal-fade">
+        <img class="philosophy-img"
+             src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6775-1024x768.jpeg"
+             alt="Filozofia restauracji Sztuczki" />
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ DISHES ══════════ -->
+<section id="dania">
+  <div class="dishes-grid">
+
+    <div class="dish-card reveal-fade">
+      <img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6801-1024x768.jpeg" alt="Tasting Plates Sztuczki" />
+      <div class="dish-overlay">
+        <div class="dish-number">01</div>
+        <div class="dish-name">Tasting Plates</div>
+        <div class="dish-desc">Małe talerze wielkiego smaku — klasyka food sharingu w nowym wydaniu.</div>
+        <div class="dish-price">od 24 zł</div>
+      </div>
+    </div>
+
+    <div class="dish-card reveal-fade">
+      <img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6804-1024x768.jpeg" alt="Dania główne Sztuczki" />
+      <div class="dish-overlay">
+        <div class="dish-number">02</div>
+        <div class="dish-name">Dania Główne</div>
+        <div class="dish-desc">Autorskie kompozycje z lokalnych, sezonowych składników.</div>
+        <div class="dish-price">od 38 zł</div>
+      </div>
+    </div>
+
+    <div class="dish-card reveal-fade">
+      <img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6813-1024x768.jpeg" alt="Desery i drinki Sztuczki" />
+      <div class="dish-overlay">
+        <div class="dish-number">03</div>
+        <div class="dish-name">Desery &amp; Drinki</div>
+        <div class="dish-desc">Słodkie finały i cocktaile — doskonałe domknięcie każdego wieczoru.</div>
+        <div class="dish-price">od 18 zł</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════ MENU ══════════ -->
+<section class="s-pad menu-bg" id="menu">
+  <div class="s-inner">
+    <div style="text-align:center;margin-bottom:60px;">
+      <span class="s-eyebrow reveal-up" style="display:block;">Karta Dań</span>
+      <h2 class="s-title reveal-up">Menu <em>Autorskie</em></h2>
+    </div>
+
+    <div class="menu-tabs reveal-up">
+      <button class="menu-tab active" data-tab="zimne">Zimne Talerze</button>
+      <button class="menu-tab"        data-tab="cieple">Ciepłe Talerze</button>
+      <button class="menu-tab"        data-tab="glowne">Dania Główne</button>
+      <button class="menu-tab"        data-tab="desery">Desery</button>
+      <button class="menu-tab"        data-tab="drinki">Cocktaile</button>
+    </div>
+
+    <!-- Zimne Talerze -->
+    <div class="menu-panel active" id="tab-zimne">
+      <div class="menu-items">
+        <div class="menu-item reveal-up" data-dish="hummus">
+          <div class="menu-item-left">
+            <div class="menu-item-name">Hummus z Ajitama</div>
+            <div class="menu-item-desc">Kremowy hummus, marynowane żółtko ajitama, olejek pietruszkowy</div>
+          </div>
+          <div class="menu-item-price">26 zł</div>
+        </div>
+        <div class="menu-item reveal-up" data-dish="tatar-pomidorowy">
+          <div class="menu-item-left">
+            <div class="menu-item-name">Tatar Pomidorowy</div>
+            <div class="menu-item-desc">Pomidory heirloom, kapary, oliwa extra virgin, zioła</div>
+          </div>
+          <div class="menu-item-price">28 zł</div>
+        </div>
+        <div class="menu-item reveal-up" data-dish="not-tuna">
+          <div class="menu-item-left">
+            <div class="menu-item-name">„Not-Tuna" — Arbuz &amp; Burrata</div>
+            <div class="menu-item-desc">Pieczony arbuz, burrata, rukola, dip musztardowy</div>
+          </div>
+          <div class="menu-item-price">34 zł</div>
+        </div>
+        <div class="menu-item reveal-up" data-dish="carpaccio-losos">
+          <div class="menu-item-left">
+            <div class="menu-item-name">Carpaccio z Łososia Sashimi</div>
+            <div class="menu-item-desc">Łosoś norweski, cytryna, oliwa extra virgin, mikrozioła</div>
+          </div>
+          <div class="menu-item-price">42 zł</div>
+        </div>
+        <div class="menu-item reveal-up" data-dish="tatar-wolowy">
+          <div class="menu-item-left">
+            <div class="menu-item-name">Tatar Wołowy z Polędwicy</div>
+            <div class="menu-item-desc">Polędwica wołowa, żółtko, kapary, ogórek kiszony, musztarda</div>
+          </div>
+          <div class="menu-item-price">48 zł</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ciepłe Talerze -->
+    <div class="menu-panel" id="tab-cieple">
+      <div class="menu-items">
+        <div class="menu-item reveal-up" data-dish="spaghetti-aglio">
+          <div class="menu-item-left">
+            <div class="menu-item-name">Spaghetti Aglio Olio e Peperoncino</div>
+            <div class="menu-item-desc">Czosnek, papryczki chili, natka pietruszki, oliwa extra vergine, grana padano</div>
+          </div>
+          <div class="menu-item-price">36 zł</div>
+        </div>
+        <div class="menu-item reveal-up" data-dish="strozzapretti">
+          <div class="menu-item-left">
+            <div class="menu-item-name">Strozzapretti Cacio e Pepe</div>
+            <div class="menu-item-desc">Sos serowy, świeżo mielony pieprz, grana padano</div>
+          </div>
+          <div class="menu-item-price">40 zł</div>
+        </div>
+        <div class="menu-item reveal-up" data-dish="calabrese-nduja">
+          <div class="menu-item-left">
+            <div class="menu-item-name">Calabrese con N'duja</div>
+            <div class="menu-item-desc">Pikantna salsiccia n'duja, pomidory San Marzano, bazylia, pecorino</div>
+          </div>
+          <div class="menu-item-price">42 zł</div>
+        </div>
+        <div class="menu-item reveal-up" data-dish="tagliatelle">
+          <div class="menu-item-left">
+            <div class="menu-item-name">Tagliatelle Szpinakowe</div>
+            <div class="menu-item-desc">Świeży makaron szpinakowy, pieczony seler, masło, parmezan</div>
+          </div>
+          <div class="menu-item-price">36 zł</div>
+        </div>
+        <div class="menu-item reveal-up" data-dish="halibut">
+          <div class="menu-item-left">
+            <div class="menu-item-name">Halibut z Puree z Groszku</div>
+            <div class="menu-item-desc">Filet halibuta, aksamitne puree z zielonego groszku, koper</div>
+          </div>
+          <div class="menu-item-price">52 zł</div>
+        </div>
+        <div class="menu-item reveal-up" data-dish="krewetki">
+          <div class="menu-item-left">
+            <div class="menu-item-name">Krewetki z Chorizo i Fasolą</div>
+            <div class="menu-item-desc">Krewetki tygrysie, chorizo ibérico, biała fasola, papryczka chili</div>
+          </div>
+          <div class="menu-item-price">46 zł</div>
+        </div>
+        <div class="menu-item reveal-up" data-dish="satay-kurczak">
+          <div class="menu-item-left">
+            <div class="menu-item-name">Satay z Kurczaka</div>
+            <div class="menu-item-desc">Szaszłyki z piersi kurczaka, sos orzechowy, chrupiąca kapusta</div>
+          </div>
+          <div class="menu-item-price">38 zł</div>
+        </div>
+        <div class="menu-item reveal-up" data-dish="kaczka">
+          <div class="menu-item-left">
+            <div class="menu-item-name">Kaczka Sous-Vide</div>
+            <div class="menu-item-desc">Pierś kaczki, mus cebulowy, ocet balsamiczny, tymianek</div>
+          </div>
+          <div class="menu-item-price">54 zł</div>
+        </div>
+        <div class="menu-item reveal-up" data-dish="kluski">
+          <div class="menu-item-left">
+            <div class="menu-item-name">Kluski Ziemniaczane</div>
+            <div class="menu-item-desc">Kluski ziemniaczane, masło brown, śmietana, szczypiorek</div>
+          </div>
+          <div class="menu-item-price">32 zł</div>
+        </div>
+        <div class="menu-item reveal-up" data-dish="frytki-cukinii">
+          <div class="menu-item-left">
+            <div class="menu-item-name">Frytki z Cukinii</div>
+            <div class="menu-item-desc">Cukinia w tempurze, sos jogurtowy, cytryna, zioła prowansalskie</div>
+          </div>
+          <div class="menu-item-price">26 zł</div>
+        </div>
+        <div class="menu-item reveal-up" data-dish="katsu-cielece">
+          <div class="menu-item-left">
+            <div class="menu-item-name">Katsu Cielęce</div>
+            <div class="menu-item-desc">Cielęcina w panko, pianka parmezanowa, sos tonkatsu</div>
+          </div>
+          <div class="menu-item-price">58 zł</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dania Główne -->
+    <div class="menu-panel" id="tab-glowne">
+      <div class="menu-items">
+        <div class="menu-item reveal-up" data-dish="policzki-wolowe">
+          <div class="menu-item-left">
+            <div class="menu-item-name">Policzki Wołowe w Sosie Grzybowym</div>
+            <div class="menu-item-desc">Długo duszone policzki, sos grzybowy, puree ziemniaczane</div>
+          </div>
+          <div class="menu-item-price">68 zł</div>
+        </div>
+        <div class="menu-item reveal-up" data-dish="ribeye">
+          <div class="menu-item-left">
+            <div class="menu-item-name">Ribeye na Kamieniu</div>
+            <div class="menu-item-desc">Antrykot 300g serwowany na rozgrzanym kamieniu wulkanicznym</div>
+          </div>
+          <div class="menu-item-price">89 zł</div>
+        </div>
+        <div class="menu-item reveal-up" data-dish="kalafior-burger">
+          <div class="menu-item-left">
+            <div class="menu-item-name">Burger ze Stekiem Kalafiora</div>
+            <div class="menu-item-desc">Stek z kalafiora, bułka brioche, wegański majonez, pikle</div>
+          </div>
+          <div class="menu-item-price">44 zł</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Desery -->
+    <div class="menu-panel" id="tab-desery">
+      <div class="menu-items">
+        <div class="menu-item reveal-up" data-dish="rum-baba">
+          <div class="menu-item-left">
+            <div class="menu-item-name">Rum Baba w Słoiku</div>
+            <div class="menu-item-desc">Baba drożdżowa, rum ciemny, krem angielski, wanilia</div>
+          </div>
+          <div class="menu-item-price">28 zł</div>
+        </div>
+        <div class="menu-item reveal-up" data-dish="krem-pistacjowy">
+          <div class="menu-item-left">
+            <div class="menu-item-name">Krem Pistacjowy z Wiśniami i Chałwą</div>
+            <div class="menu-item-desc">Pasta pistacjowa, wiśnie, nitki chałwy, śmietana 36%</div>
+          </div>
+          <div class="menu-item-price">30 zł</div>
+        </div>
+        <div class="menu-item reveal-up" data-dish="rabarbar">
+          <div class="menu-item-left">
+            <div class="menu-item-name">Pieczony Rabarbar z Kruszonką</div>
+            <div class="menu-item-desc">Pieczony rabarbar, kruszonka orzechowa, żurawina, cynamon</div>
+          </div>
+          <div class="menu-item-price">26 zł</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cocktaile -->
+    <div class="menu-panel" id="tab-drinki">
+      <div class="menu-items">
+        <div class="menu-item reveal-up" data-dish="espresso-tonic">
+          <div class="menu-item-left">
+            <div class="menu-item-name">Espresso Tonic z Granatem</div>
+            <div class="menu-item-desc">Espresso double, tonic Fever-Tree, sok z granatu, lód</div>
+          </div>
+          <div class="menu-item-price">22 zł</div>
+        </div>
+        <div class="menu-item reveal-up" data-dish="mali-boo">
+          <div class="menu-item-left">
+            <div class="menu-item-name">Mali Boo</div>
+            <div class="menu-item-desc">Autorski cocktail — wódka, kokos, limonka, mango, soda</div>
+          </div>
+          <div class="menu-item-price">38 zł</div>
+        </div>
+        <div class="menu-item reveal-up" data-dish="rabarbaroni">
+          <div class="menu-item-left">
+            <div class="menu-item-name">Rabarbaroni</div>
+            <div class="menu-item-desc">Gin, Campari, syrop rabarbarowy, vermouth, skórka pomarańczowa</div>
+          </div>
+          <div class="menu-item-price">40 zł</div>
+        </div>
+        <div class="menu-item reveal-up" data-dish="marharita">
+          <div class="menu-item-left">
+            <div class="menu-item-name">Marharita</div>
+            <div class="menu-item-desc">Tequila blanco, Triple Sec, sok z limonki, sól, twist sezonowy</div>
+          </div>
+          <div class="menu-item-price">38 zł</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════ WINE ══════════ -->
+<section class="s-pad wine-bg" id="wina">
+  <div class="s-inner">
+    <div class="wine-intro reveal-up">
+      <span class="s-eyebrow" style="display:block;text-align:center;">Selekcja</span>
+      <h2 class="s-title" style="text-align:center;">Karta <em>Win</em></h2>
+      <p>Wyselekcjonowane wina z najlepszych winnic Europy. Każde dopasowane do filozofii food sharing — aby smaki mogły się wzajemnie uzupełniać.</p>
+    </div>
+    <div class="wine-grid">
+      <div class="wine-card reveal-up" data-wine="gavi">
+        <div class="wine-bottle-thumb">
+          <img src="https://www.fontanafredda.it/wp-content/uploads/2021/01/Gavi.png" alt="Gavi di Gavi" />
+        </div>
+        <div class="wine-type">Białe · Włochy</div>
+        <div class="wine-name">Gavi di Gavi DOCG</div>
+        <div class="wine-origin">Piemont, Villa Sparina</div>
+        <div class="wine-desc">Świeże, mineralne białe wino z nutami cytrusów i białych kwiatów. Doskonałe do owoców morza.</div>
+        <div class="wine-price">od 180 zł / but.</div>
+        <div class="wine-click-hint">Kliknij · obróć butelkę</div>
+      </div>
+      <div class="wine-card reveal-up" data-wine="bordeaux">
+        <div class="wine-bottle-thumb">
+          <img src="https://dco67j8qsiydp.cloudfront.net/optimized/images/products/2022/09/2019_Chateau_De_Pressac_Saint_Emilion_Grand_Cru_Classe_Bordeaux_Bottleshot/29c5949395165279a3e6edaf0a4da871.png" alt="Saint-Émilion Grand Cru" />
+        </div>
+        <div class="wine-type">Czerwone · Francja</div>
+        <div class="wine-name">Saint-Émilion Grand Cru</div>
+        <div class="wine-origin">Bordeaux, Château Figeac</div>
+        <div class="wine-desc">Eleganckie, strukturalne wino z Bordeaux. Taniny z jedwabiem, dębowe nuty, długie wykończenie.</div>
+        <div class="wine-price">od 320 zł / but.</div>
+        <div class="wine-click-hint">Kliknij · obróć butelkę</div>
+      </div>
+      <div class="wine-card reveal-up" data-wine="champagne">
+        <div class="wine-bottle-thumb">
+          <img src="https://champagnebrigandat.fr/wp-content/uploads/2021/06/CuveeBrutNature.png" alt="Champagne Brut Nature" />
+        </div>
+        <div class="wine-type">Musujące · Francja</div>
+        <div class="wine-name">Champagne Brut Nature</div>
+        <div class="wine-origin">Reims, Maison Taittinger</div>
+        <div class="wine-desc">Prestiżowy szampan ze świeżymi nutami zielonego jabłka, brioche i białych kwiatów.</div>
+        <div class="wine-price">od 480 zł / but.</div>
+        <div class="wine-click-hint">Kliknij · obróć butelkę</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ GALLERY ══════════ -->
+<section class="s-pad gallery-bg" id="galeria">
+  <div class="s-inner">
+    <div style="text-align:center;margin-bottom:60px;">
+      <span class="s-eyebrow reveal-up" style="display:block;">Atmosfera</span>
+      <h2 class="s-title reveal-up">Galeria <em>Sztuczek</em></h2>
+    </div>
+    <div class="masonry-grid">
+      <div class="masonry-item">
+        <img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6762-1024x768.jpeg" alt="Sztuczki wnętrze 1" />
+        <div class="masonry-hover"><div class="zoom-icon">+</div></div>
+      </div>
+      <div class="masonry-item">
+        <img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6763-1024x768.jpeg" alt="Sztuczki wnętrze 2" />
+        <div class="masonry-hover"><div class="zoom-icon">+</div></div>
+      </div>
+      <div class="masonry-item">
+        <img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6777-1024x768.jpeg" alt="Sztuczki danie 1" />
+        <div class="masonry-hover"><div class="zoom-icon">+</div></div>
+      </div>
+      <div class="masonry-item">
+        <img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6778-1024x768.jpeg" alt="Sztuczki danie 2" />
+        <div class="masonry-hover"><div class="zoom-icon">+</div></div>
+      </div>
+      <div class="masonry-item">
+        <img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6787-1024x768.jpeg" alt="Sztuczki danie 3" />
+        <div class="masonry-hover"><div class="zoom-icon">+</div></div>
+      </div>
+      <div class="masonry-item">
+        <img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6788-1024x768.jpeg" alt="Sztuczki danie 4" />
+        <div class="masonry-hover"><div class="zoom-icon">+</div></div>
+      </div>
+      <div class="masonry-item">
+        <img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6789-1024x768.jpeg" alt="Sztuczki danie 5" />
+        <div class="masonry-hover"><div class="zoom-icon">+</div></div>
+      </div>
+      <div class="masonry-item">
+        <img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6797-1024x768.jpeg" alt="Sztuczki danie 6" />
+        <div class="masonry-hover"><div class="zoom-icon">+</div></div>
+      </div>
+      <div class="masonry-item">
+        <img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6810-1024x768.jpeg" alt="Sztuczki danie 7" />
+        <div class="masonry-hover"><div class="zoom-icon">+</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox">
+  <button class="lb-close" id="lb-close-btn">×</button>
+  <button class="lb-nav lb-prev" id="lb-prev-btn">&#8592;</button>
+  <img id="lb-img" src="" alt="" />
+  <button class="lb-nav lb-next" id="lb-next-btn">&#8594;</button>
+  <div class="lb-counter" id="lb-counter">1 / 9</div>
+</div>
+
+<!-- ══════════ REVIEWS ══════════ -->
+<section class="s-pad reviews-bg" id="opinie">
+  <div class="s-inner">
+    <div class="reviews-header-grid">
+      <div>
+        <span class="s-eyebrow reveal-up" style="display:block;">Opinie Gości</span>
+        <h2 class="s-title reveal-up">Co Mówią<br /><em>Nasi Goście</em></h2>
+      </div>
+      <div class="rating-big reveal-up">
+        <div class="rating-number">4,8</div>
+        <div class="rating-stars">★★★★★</div>
+        <div class="rating-count">239 opinii Google</div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal-up">
+        <div class="review-top">
+          <span class="reviewer-name">Marta Misztal</span>
+          <span class="review-date">3 miesiące temu</span>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-quote-mark">"</div>
+        <p class="review-text">Dziś miałam ogromną przyjemność odwiedzić razem z Przyjaciółmi restaurację Sztuczki i jestem pod dużym wrażeniem! Klimat, obsługa, jedzenie — wszystko na najwyższym poziomie.</p>
+        <div class="review-source">Google · Zweryfikowana opinia</div>
+      </div>
+      <div class="review-card reveal-up">
+        <div class="review-top">
+          <span class="reviewer-name">Wiktoria Wzorek</span>
+          <span class="review-date">3 miesiące temu</span>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-quote-mark">"</div>
+        <p class="review-text">Cudowne miejsce! Od samego wejścia wita fenomenalna obsługa. Przez całą wizytę zwracała ogromną uwagę na to, czy wszystko jest w porządku. Niesamowite doświadczenie kulinarne.</p>
+        <div class="review-source">Google · Zweryfikowana opinia</div>
+      </div>
+      <div class="review-card reveal-up">
+        <div class="review-top">
+          <span class="reviewer-name">Kaja Szpankowska</span>
+          <span class="review-date">3 miesiące temu</span>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-quote-mark">"</div>
+        <p class="review-text">Bardzo ciekawa restauracja — przyjemny wystrój, miła obsługa i bardzo dobre jedzenie. Koncepcja food sharing sprawiła, że kolacja była wyjątkowym przeżyciem.</p>
+        <div class="review-source">Google · Zweryfikowana opinia</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ RESERVATION ══════════ -->
+<section class="s-pad reservation-bg" id="rezerwacja">
+  <div class="s-inner">
+
+    <div class="res-centered">
+      <span class="s-eyebrow reveal-up">Rezerwacja</span>
+      <h2 class="s-title reveal-up">Zarezerwuj<br /><em>Stolik</em></h2>
+      <div class="s-rule reveal-up" style="margin:24px auto;"></div>
+
+      <p class="res-tagline reveal-up">Zadzwoń do nas — odbieramy w godzinach otwarcia restauracji</p>
+
+      <a href="tel:+48729789615" class="res-phone reveal-up">
+        <span class="res-phone-icon">📞</span>
+        729 789 615
+      </a>
+
+      <div class="res-meta reveal-up">
+        <div class="res-meta-item">
+          <div class="res-meta-label">Adres</div>
+          <div class="res-meta-value">ul. H. Sienkiewicza 29, Kielce</div>
+        </div>
+        <div class="res-meta-divider"></div>
+        <div class="res-meta-item">
+          <div class="res-meta-label">Pon – Czw</div>
+          <div class="res-meta-value">12:00 – 21:00</div>
+        </div>
+        <div class="res-meta-divider"></div>
+        <div class="res-meta-item">
+          <div class="res-meta-label">Pt – Sb</div>
+          <div class="res-meta-value">12:00 – 22:00</div>
+        </div>
+        <div class="res-meta-divider"></div>
+        <div class="res-meta-item">
+          <div class="res-meta-label">Niedziela</div>
+          <div class="res-meta-value">12:00 – 21:00</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════ CONTACT / MAP ══════════ -->
+<section class="contact-section" id="kontakt">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <span class="s-eyebrow reveal-up" style="display:block;">Jak Nas Znaleźć</span>
+      <h2 class="s-title reveal-up">Lokalizacja<br />&amp; <em>Kontakt</em></h2>
+      <div class="s-rule reveal-up"></div>
+      <div class="contact-detail reveal-up">
+        <span class="contact-detail-label">Adres</span>
+        <span class="contact-detail-value">ul. Henryka Sienkiewicza 29</span>
+        <span class="contact-detail-sub">25-007 Kielce, centrum miasta</span>
+      </div>
+      <div class="contact-detail reveal-up">
+        <span class="contact-detail-label">Telefon</span>
+        <a href="tel:+48729789615" class="contact-detail-value">+48 729 789 615</a>
+      </div>
+      <div class="contact-detail reveal-up">
+        <span class="contact-detail-label">Instagram</span>
+        <a href="https://www.instagram.com/sztuczki.restauracja/" target="_blank" class="contact-detail-value">@sztuczki.restauracja</a>
+      </div>
+      <div class="contact-detail reveal-up">
+        <span class="contact-detail-label">Godziny</span>
+        <span class="contact-detail-value">Nd–Czw: 12:00 – 21:00</span>
+        <span class="contact-detail-sub">Pt–Sb: 12:00 – 22:00</span>
+      </div>
+    </div>
+    <div class="contact-map reveal-fade">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2469.5!2d20.6286!3d50.8660!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47183900!2sSienkiewicza+29+Kielce!5e0!3m2!1spl!2spl!4v1"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="Lokalizacja Sztuczki Kielce">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ INSTAGRAM ══════════ -->
+<section class="s-pad insta-bg" id="instagram">
+  <div class="s-inner">
+    <div class="insta-header reveal-up">
+      <span class="s-eyebrow" style="display:block;">Social Media</span>
+      <h2 class="s-title">Śledź Nas<br /><em>w Social Media</em></h2>
+    </div>
+
+    <div class="social-cards reveal-up">
+      <a href="https://www.instagram.com/sztuczki.restauracja/" target="_blank" class="social-card">
+        <div class="social-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5"/>
+            <circle cx="12" cy="12" r="4.5"/>
+            <circle cx="17.6" cy="6.4" r="0.7" fill="currentColor" stroke="none"/>
+          </svg>
+        </div>
+        <div class="social-card-text">
+          <div class="social-card-name">Instagram</div>
+          <div class="social-card-handle">@sztuczki.restauracja</div>
+        </div>
+        <div class="social-card-arrow">→</div>
+      </a>
+
+      <a href="https://www.facebook.com/p/Sztuczki-Restauracja-61575626309081/" target="_blank" class="social-card">
+        <div class="social-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+        </div>
+        <div class="social-card-text">
+          <div class="social-card-name">Facebook</div>
+          <div class="social-card-handle">Sztuczki Restauracja</div>
+        </div>
+        <div class="social-card-arrow">→</div>
+      </a>
+    </div>
+
+    <div class="insta-grid">
+      <div class="insta-item reveal-fade"><img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6757-1024x768.jpeg" alt="Instagram 1" /><div class="insta-overlay">Obserwuj</div></div>
+      <div class="insta-item reveal-fade"><img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6764-1024x768.jpeg" alt="Instagram 2" /><div class="insta-overlay">Obserwuj</div></div>
+      <div class="insta-item reveal-fade"><img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6775-1024x768.jpeg" alt="Instagram 3" /><div class="insta-overlay">Obserwuj</div></div>
+      <div class="insta-item reveal-fade"><img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6801-1024x768.jpeg" alt="Instagram 4" /><div class="insta-overlay">Obserwuj</div></div>
+      <div class="insta-item reveal-fade"><img src="https://tymrazem.pl/wp-content/uploads/2025/06/sztuczki6804-1024x768.jpeg" alt="Instagram 5" /><div class="insta-overlay">Obserwuj</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FAQ ══════════ -->
+<section class="s-pad faq-bg" id="faq">
+  <div class="s-inner">
+    <div style="text-align:center;margin-bottom:70px;">
+      <span class="s-eyebrow reveal-up" style="display:block;">Pytania</span>
+      <h2 class="s-title reveal-up">Często Zadawane<br /><em>Pytania</em></h2>
+    </div>
+    <div class="faq-inner">
+      <div class="faq-item reveal-up">
+        <div class="faq-q">Czym jest food sharing i jak działa w restauracji? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Food sharing to koncepcja wspólnego jedzenia — zamawiasz kilka różnych talerzyków i dzielisz się nimi przy stole. To świetny sposób na poznanie jak największej liczby smaków podczas jednej wizyty.</div>
+      </div>
+      <div class="faq-item reveal-up">
+        <div class="faq-q">Czy restauracja oferuje opcje dla wegetarian i wegan? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Tak — karta zawiera wiele opcji wegetariańskich i wegańskich, wyraźnie oznaczonych. Poinformuj nas o swoich preferencjach przy rezerwacji.</div>
+      </div>
+      <div class="faq-item reveal-up">
+        <div class="faq-q">Czy mogę zarezerwować stolik na specjalną okazję? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Oczywiście! Organizujemy urodziny, rocznice, wieczory panieńskie i spotkania firmowe. Możemy przygotować specjalną dekorację lub menu degustacyjne.</div>
+      </div>
+      <div class="faq-item reveal-up">
+        <div class="faq-q">Czy wymagana jest wcześniejsza rezerwacja? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Rezerwacja jest zalecana, szczególnie w weekendy i wieczory. Przyjmujemy gości bez rezerwacji, ale nie możemy gwarantować dostępności stolika.</div>
+      </div>
+      <div class="faq-item reveal-up">
+        <div class="faq-q">Czy restauracja jest dostępna dla osób z alergiami? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Tak — nasz zespół jest przeszkolony w zakresie alergii pokarmowych. Menu zawiera informacje o alergenach, a kuchnia może dostosować wiele dań do indywidualnych potrzeb.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-name">Sztuczki</div>
+      <span class="footer-brand-sub">Food &amp; Art · Kielce</span>
+      <p class="footer-brand-desc">Wyjątkowe doświadczenie kulinarne w sercu Kielc. Food sharing, galeria sztuki, doskonałe drinki.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Menu</h4>
+      <ul>
+        <li><a href="#o-nas">O Restauracji</a></li>
+        <li><a href="#menu">Karta Dań</a></li>
+        <li><a href="#wina">Karta Win</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Informacje</h4>
+      <ul>
+        <li><a href="#opinie">Opinie</a></li>
+        <li><a href="#rezerwacja">Rezerwacja</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href="tel:+48729789615">729 789 615</a></li>
+        <li><a href="#">Sienkiewicza 29, Kielce</a></li>
+        <li><a href="https://www.instagram.com/sztuczki.restauracja/" target="_blank">Instagram</a></li>
+        <li><a href="https://www.facebook.com/p/Sztuczki-Restauracja-61575626309081/" target="_blank">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 Sztuczki Food &amp; Art · Wszelkie prawa zastrzeżone</span>
+    <div class="footer-socials">
+      <a href="https://www.instagram.com/sztuczki.restauracja/" target="_blank" class="social-link" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://www.facebook.com/p/Sztuczki-Restauracja-61575626309081/" target="_blank" class="social-link" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <a href="tel:+48729789615" class="social-link" aria-label="Telefon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.61A16 16 0 0 0 14 15.68l1.7-1.7a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════ WINE MODAL ══════════ -->
+<div id="wine-modal">
+  <button class="wm-close" id="wm-close-btn">×</button>
+  <div class="wm-inner">
+    <div id="wm-3d-container"></div>
+    <div class="wm-info">
+      <div class="wm-type"   id="wm-type"></div>
+      <h2 class="wm-name"   id="wm-name"></h2>
+      <p  class="wm-origin" id="wm-origin"></p>
+      <div class="wm-divider"></div>
+      <p  class="wm-desc"   id="wm-desc"></p>
+      <div class="wm-price" id="wm-price"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ DISH MODAL ══════════ -->
+<div id="dish-modal">
+  <button class="dm-close" id="dm-close-btn">×</button>
+  <div class="dm-inner">
+
+    <!-- LEFT: 3D card -->
+    <div class="dm-scene" id="dm-scene">
+      <div class="dm-card" id="dm-card">
+        <!-- front -->
+        <div class="dm-card-front" id="dm-card-front-inner">
+          <!-- filled by JS -->
+        </div>
+        <!-- back -->
+        <div class="dm-card-back">
+          <div class="dm-back-label">Składniki</div>
+          <div id="dm-ingredients"><!-- filled by JS --></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: text -->
+    <div class="dm-text">
+      <div class="dm-category" id="dm-category"></div>
+      <h2 class="dm-name-pl"  id="dm-name-pl"></h2>
+      <p  class="dm-name-en"  id="dm-name-en"></p>
+      <div class="dm-divider"></div>
+      <p  class="dm-desc-pl"  id="dm-desc-pl"></p>
+      <div class="dm-ing-block">
+        <div class="dm-ing-label">Składniki</div>
+        <div class="dm-ing-list" id="dm-ingredients-right"></div>
+      </div>
+      <div class="dm-price"   id="dm-price"></div>
+      <div class="dm-tags"    id="dm-tags"></div>
+      <a href="#rezerwacja" class="dm-reserve-btn" onclick="closeDishModal()">Zarezerwuj stolik</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- JS — osobny plik na każdą funkcjonalność, ładowane po kolei -->
+<script src="js/loader.js"></script>
+<script src="js/cursor.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/hero.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/counters.js"></script>
+<script src="js/menu-tabs.js"></script>
+<script src="js/lightbox.js"></script>
+<script src="js/faq.js"></script>
+<script src="js/form.js"></script>
+<script src="js/wine-3d.js"></script>
+<script src="js/wine-modal.js"></script>
+<script src="js/dish-modal.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

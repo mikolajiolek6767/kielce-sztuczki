@@ -1,0 +1,41 @@
+.philosophy-bg { background: var(--dark2); }
+
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.philosophy-quote {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 2.8vw, 2.6rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.45;
+  color: var(--cream);
+  border-left: 2px solid var(--gold);
+  padding-left: 36px;
+  margin-bottom: 32px;
+}
+
+.philosophy-text {
+  font-size: 0.95rem;
+  color: var(--muted2);
+  line-height: 1.9;
+}
+
+.philosophy-img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.chef-sig {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.35rem;
+  color: var(--gold2);
+  margin-top: 20px;
+  display: block;
+}
